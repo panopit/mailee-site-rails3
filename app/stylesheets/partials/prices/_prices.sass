@@ -1,0 +1,73 @@
+@import "partials/utilities/utilities.sass"
+body#prices
+  ul
+    list-style: inside square
+    margin: 0
+    padding: .5em
+  table
+    th, td
+      &.left_aligned
+        text-align: left
+      &.centered
+        text-align: center
+      &.right_aligned
+        text-align: right
+    &#prices_table
+      border: 1px solid #5D93CA
+      background: white
+      margin-bottom: 0
+      thead
+        th
+          padding: .5em
+          background:
+            image: url("/images/table_header_background.png")
+            repeat: repeat-x
+            attachment: scroll
+          h3
+            color: white
+            text-shadow: #041c65 1px 1px 0
+            font:
+              weight: 900
+              size: 15px
+            margin: 0
+            padding: .5em
+      tbody
+        td
+          color: #666
+          strong
+            color: #333
+        td.price
+          font:
+            size: 20px
+            weight: 900
+            family: 'Droid Sans', Arial, sans-serif
+          color: #222
+        tr:hover td
+          text-shadow: $blue_dark 0 -1px 0
+          background-color: $blue_light
+          color: white !important
+          strong
+            color: white !important
+  h1 a.signup_now
+    +sprite("/images/signup_now_button.png")
+    +position(0,-240px)
+    font:
+      family: 'Droid Sans', Arial, sans-serif
+      size: 24px
+    color: white !important
+    display: block
+    cursor: pointer
+    height: 28px
+    float: left
+    margin-top: 1em
+    padding: 12px 0 8px 0
+    text-align: center
+    text-shadow: ($green - #555) 0 -1px 0
+    text-decoration: none
+    width: 240px
+    &:hover
+      +position(0,-144px)
+      text-decoration: none
+    &:active
+      +position(0,-48px)
+      color: #eee

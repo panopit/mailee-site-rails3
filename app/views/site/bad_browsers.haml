@@ -1,0 +1,38 @@
+.content_wrapper
+  .bad_browser
+    .bad_browser_wrapper
+      %h1 Navegador inválido
+      %p
+        %strong O seu navegador não é suportado pelo Mailee.me.
+      %br
+      %h2 O que fazer?
+      %p Você pode fazer o download de um dos seguintes navegadores:
+      %br
+      %table#valid_browsers{ :cellpacing => 0, :cellpadding => 0}
+        %tbody
+          %tr
+            %td
+              %a{ :href => 'http://www.mozilla.com/pt-BR/'}
+                = image_tag 'browsers/browser_firefox.gif'
+                %br
+                %strong Firefox 3+
+            %td
+              %a{ :href => 'http://www.google.com/chrome'}
+                = image_tag 'browsers/browser_chrome.gif'
+                %br
+                %strong Chrome 5+
+            %td
+              %a{ :href => 'http://www.apple.com/safari/download'}
+                = image_tag 'browsers/browser_safari.gif'
+                %br
+                %strong Safari 4+
+            %td
+              %a{ :href => 'http://www.opera.com/browser/download' }
+                = image_tag 'browsers/browser_opera.gif'
+                %br
+                %strong Opera 9+
+            %td
+              %a{ :href => 'http://www.microsoft.com/brasil/windows/Internet-explorer/default.aspx'}
+                = image_tag 'browsers/browser_msie.gif'
+                %br
+                %strong IE 8+

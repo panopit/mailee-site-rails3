@@ -1,0 +1,26 @@
+- @title         = "Videos · Email Marketing 2.0 · Mailee.me"
+- @body_id       = "videos"
+- @showcase      = false
+- @metatags      = partial("../videos/metatags")
+- @signup_bar    = true
+- @selected_menu = :videos
+.content_wrapper
+  #mailee_videos
+    .videos_wrapper
+      %h1 Vídeos
+      .channels.span-3.last
+        %h4
+          %a.current_channel Tour
+        %h4
+          %a Help
+        %h4
+          %a Promos
+      .tubes.span-21
+        - 8.times do
+          .video_wrapper
+            .video_box= img("video.jpg")
+            .video_name
+              %p
+                Video Name
+                %a.watch_now assista »
+        .clear

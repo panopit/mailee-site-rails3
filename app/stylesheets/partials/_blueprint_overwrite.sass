@@ -1,0 +1,59 @@
+@import "partials/utilities/utilities.sass"
+$font-color:            #444444
+$quiet-color:           $font-color + #444444
+$loud-color:            $font-color - #444444
+$header-color:          $font-color - #111111
+$alt-text-color:        #666666
+
+$link-color:            $blue
+$link-hover-color:      $blue_light
+$link-focus-color:      $link-hover-color
+$link-active-color:     $blue_dark
+$link-visited-color:    $link-color
+
+$feedback-border-color: #dddddd
+$success-color:         #264409
+$success-bg-color:      #e6efc2
+$success-border-color:  #c6d880
+$notice-color:          #514721
+$notice-bg-color:       #fff6bf
+$notice-border-color:   #ffd324
+$error-color:           #8a1f11
+$error-bg-color:        #fbe3e4
+$error-border-color:    #fbc2c4
+
+$highlight-color:       yellow
+$added-color:           white
+$added-bg-color:        #006600
+$removed-color:         white
+$removed-bg-color:      #990000
+
+$blueprint-table-header-color: $blue_light
+$blueprint-table-stripe-color: #EDEEEF
+
+$blueprint-font-size: 14px !default
+
+button
+  outline: 0 transparent
+  &:active
+    outline: 0 transparent
+  &:focus
+    outline: 0 transparent
+input, a, *
+  outline: 0 transparent
+  &:focus
+    outline: 0 transparent
+a::-moz-focus-inner, button::-moz-focus-inner, input::-moz-focus-inner
+  border: 0 transparent
+a
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+::-moz-selection
+  background: rgba(200,220,240,.5)
+::selection
+  background: rgba(200,220,240,.5)
+iframe
+  padding: 0
+  margin: 0
+  border: 0 none

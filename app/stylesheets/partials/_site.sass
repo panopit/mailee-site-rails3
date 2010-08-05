@@ -1,0 +1,135 @@
+@import "blueprint"
+@import "blueprint/reset"
++blueprint-typography
+@import "partials/blueprint_overwrite.sass"
+@import "partials/utilities/utilities.sass"
+@import "partials/shared/header.sass"
+@import "partials/home/showcase.sass"
+@import "partials/home/social.sass"
+@import "partials/shared/footer.sass"
+@import "partials/resources/resources.sass"
+@import "partials/prices/prices.sass"
+@import "partials/videos/videos.sass"
+@import "partials/bad_browsers.sass"
+$page_bg: #000
+body#home
+  #content
+    padding-top: 0px !important
+body
+  +blueprint
+  background: $page_bg url("/images/footer_background.gif") repeat scroll top left
+  height: 100%
+  h1
+    font:
+      family: 'Droid Sans', arial, serif
+      weight: bold
+    text-shadow: #fff 0 1px 0
+    text-rendering: optimizeLegibility
+  h2, h3
+    font:
+      family: Helvetica, 'Humnst777 BT', Arial, sans-serif
+      weight: 900
+    text-shadow: #fff 0 1px 0
+    text-rendering: optimizeLegibility
+  hr
+    border: 0 none
+    border-top: 1px solid #ddd
+    border-bottom: 1px solid #fff
+  .error
+    background-color: white
+    border: 3px solid $red
+    h6
+      color: $red
+  .success
+    background-color: white
+    border: 3px solid $green
+    h6
+      color: ($green - #222)
+  
+  #root
+    height: 100%
+    #header
+      .header_wrapper
+        +container
+        #logo
+          +column(6)
+        #navigation
+          +column(18, last)
+    #content
+      background: #222 url("/images/background_texture.gif") repeat scroll top left
+      border-top: 0px
+      border-bottom: 1px solid #ccc
+      .content_wrapper
+        +container
+        min-height: 300px
+    #easy_signup
+      background-color: #DDD
+      border: 0 none
+      border-top: 1px solid #fff
+      border-bottom: 1px solid #000
+      margin: 0
+      padding: 0
+      .easy_signup_wrapper
+        h1
+          font-size: 27px
+          text-align: center
+          color: #666
+          margin: 0
+          padding: .75em 0
+          a
+            text-decoration: none
+            +dark-text
+            text-rendering: optimizeLegibility
+            &.prices
+              color: $blue
+              &:hover
+                color: $blue_light
+              &:active
+                color: $blue_dark
+            &.signup
+              color: $green - #111
+              &:hover
+                color: $green
+              &:active
+                color: $green - #222
+    #footer
+      background: transparent none
+      border-top: 1px solid #777
+      .footer_wrapper
+        +container
+    .signup_wrapper
+      +container
+#mailee_terms_of_use, #mailee_privacy_policy, #mailee_anti_spam_policy, #mailee_best_practices
+  h2
+    margin-top: 2em
+  p
+    font-size: 14px
+    line-height: 21px
+  ul
+    list-style: inside square
+    text-shadow: #fff 0 1px 0
+    font:
+      size: 13px
+      weight: normal
+    margin: 0
+    padding: 0
+    li
+      ul
+        margin: 0 0 0 2em
+  ol
+    text-shadow: #fff 0 1px 0
+    font:
+      size: 21px
+      weight: 900
+    list-type: inside
+    margin: 0
+    padding: 0 0 30px 42px
+    li
+      padding: 10px 0
+      ol
+        font:
+          size: 13px
+          weight: normal
+        line-height: 18px
+        margin: 0
+        padding: 0 0 0 0px

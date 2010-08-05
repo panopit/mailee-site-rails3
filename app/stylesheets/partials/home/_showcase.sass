@@ -1,0 +1,119 @@
+@import "partials/utilities/utilities.sass"
+body #root
+  #showcase
+    background: transparent url("/images/header_background.gif") scroll repeat top left
+    overflow: hidden
+    z-index: 400
+    .showcase_wrapper
+      +container
+      position: relative
+      height: 310px
+      max-height: 310px
+      padding: 20px 0
+      overflow: visible !important
+      color: white
+    .slideme
+      position: relative
+      z-index: 500
+      left: 0
+    .light
+      background: transparent url("/images/maiz-lighting.png") scroll no-repeat center -60px
+      border-top: 1px solid #282828
+      border-bottom: 1px solid #ddd
+    .showcase
+      position: absolute
+      left: 0px
+      h1
+        font-size: 30px
+        color: #FFFFFF
+        +light-text
+        margin: 0 0 .5em 0
+        line-height: 1.5em
+      img
+        max-height: 310px
+    ol
+      font-family: 'Droid Sans', Arial, sans-serif
+      font-size: 30px
+      color: #FFFFFF
+      margin: 0
+      padding: 0
+      list-style: inside decimal
+    p
+      color: white
+      text-shadow: #000 0 -1px 0
+      font-size: 1.5em
+    h2
+      a
+        display: block
+        float: left
+        text-decoration: none
+        color: white
+        font:
+          family: 'Droid Sans', Arial, sans-serif
+          size: 18px
+        height: 32px
+        display: block
+        cursor: pointer
+        float: left
+        margin: 0
+        text-align: center
+        vertical-align: middle
+        padding: 10px 20px 6px 20px
+        text-shadow: #000 0 -1px 0
+        &.take_the_tour
+          +sprite("/images/take_the_tour_button.png")
+          +position(0,-240px)
+          width: 120px
+          margin-right: 20px
+          &:hover
+            +position(0,-144px)
+          &:active
+            +position(0,-48px)
+        &.signup_now
+          +sprite("/images/signup_now_button.png")
+          +position(0,-240px)
+          width: 200px
+          &:hover
+            +position(0,-144px)
+          &:active
+            +position(0,-48px)
+    .video_wrapper
+      +box-shadow(0,0,6px,#579)
+      border: 1px solid #555
+      height: 300px
+      width: 475px
+  .showcase_selector
+    background: #ccc url("/images/showcase_selector_background.png") repeat-x scroll top left
+    border:
+      top: 1px solid #999
+      bottom: 1px solid #999
+    padding: 0
+    z-index: 800
+    a
+      color: #555
+      display: block
+      padding: 1.5em 21px
+      float: left
+      display: inline
+      border-left: 1px solid #fff
+      border-right: 1px solid #999
+      text:
+        decoration: none
+        transform: uppercase
+        shadow: #fff 0 1px 0
+      font:
+        size: 12px
+        weight: 900
+      &:hover
+        color: #000
+        background: #ddd url("/images/showcase_selector_background.png") repeat-x scroll top left
+      &:first-child
+        border-left: 0 none
+      &:last-child
+        border-right: 0 none
+      &.on
+        background: $blue_light url("/images/showcase_selector_background.png") repeat-x scroll top left !important
+        color: white !important
+        text-shadow: $blue 0 -1px 0
+      &.off
+        background-color: black !important

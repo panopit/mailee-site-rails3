@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.3)
     abstract (1.0.0)
     actionmailer (3.0.0.rc)
       actionpack (= 3.0.0.rc)
@@ -31,6 +32,8 @@ GEM
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
     builder (2.1.2)
+    compass (0.10.3)
+      haml (>= 3.0.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.15)
@@ -81,6 +84,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
+  compass (>= 0.10.3)
   haml
   pg
   pivotal-tracker

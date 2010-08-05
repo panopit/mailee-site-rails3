@@ -1,0 +1,46 @@
+@import "partials/utilities/utilities.sass"
+body#videos
+  #root
+    #content
+      .channels
+        h4
+          margin: 0
+          padding: 0
+          a
+            display: block
+            margin: 0 0 3px 0
+            padding: 0.5em 0 0.5em 0.5em
+            font:
+              family: 'Droid Sans', Arial, sans-serif
+              size: 18px
+            color: #666
+            cursor: pointer
+            text-decoration: none
+            &:hover, &.current_channel
+              background-color: $blue
+              color: white
+      .tubes
+        .video_wrapper
+          height: 230px
+          width: 250px
+          float: left
+          border: 1px solid #bbb
+          margin-right: 24px
+          margin-bottom: 24px
+          .video_box
+            width: 250px
+            height: 180px
+          .video_name
+            width: 250px
+            height: 50px
+            background-color: #bbb
+            p
+              padding: 0
+              margin: 0
+              color: white
+              float: left
+              a.watch_now
+                visibility: hidden
+                cursor: pointer
+        .video_wrapper:hover .video_name a.watch_now
+          visibility: visible

@@ -1,0 +1,10 @@
+#mailee_blog
+  .blog_wrapper
+    %h2= link_to((image_tag("social/rss_32.png") + ' Blog'), blog_path)
+    -#= rss_list 'http://blog.mailee.me/rss.xml'
+    #mailee_rss_blog
+#mailee_twitter
+  .twitter_wrapper
+    %h2= link_to((image_tag("social/twitter_32.png") + ' Twitter'), twitter_path)
+    .mailee_tweets
+.clear

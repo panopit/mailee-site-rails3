@@ -1,0 +1,143 @@
+@import "partials/utilities/utilities.sass"
+body
+  #root
+    #footer
+      color: white
+      .footer_wrapper
+        padding: 40px 0 0 0
+        hr
+          border: 0 none
+          border-top: 1px solid #000
+          border-bottom: 1px solid #333
+          margin: 1em 0
+        .web_links
+          img
+            vertical-align: middle
+          a
+            color: $blue_light
+            text-decoration: none
+            &:hover
+              text-decoration: none
+              color: $blue_light + #222
+            &:active
+              color: $blue
+              position: relative
+              top: 1px
+        h3
+          margin: 0 0 .5em 0
+          padding: 0
+          color: #50585f
+          font:
+            weight: bolder
+            style: normal
+            size: 14px
+          text:
+            transform: lowercase
+            shadow: #000 0 0 2px
+        ul
+          padding: 0
+          margin: 0
+          li
+            list-style: square inside url("/images/footer_bullet_normal.gif")
+            margin: 0
+            padding: .25em 0
+            opacity: .6
+            a
+              font-size: 13px
+              color: #999
+              padding: .25em 0 .25em 0
+              text:
+                decoration: none
+                shadow: #000 0 -1px 0
+              &:hover
+                color: #fff
+                text-decoration: none
+            &:hover
+              opacity: 1
+              a
+                color: #fff
+        form
+          label
+            color: white
+            +light-text
+          fieldset
+            border: 0 none
+            padding: 0
+          input[type="text"], input[type="password"]
+            +rounded(6px)
+            width: 216px
+            padding-left: 5px
+            padding-right: 5px
+            margin: 0 0 .5em 0
+            background-color: rgba(0,0,0,.2)
+            border-width: 2px
+            border-color: rgba(128,128,128,.5)
+            color: #bbb
+            &:focus
+              background-color: rgba(0,0,0,.5)
+              border-color: rgba(128,128,128,1)
+              color: white
+              outline: 0
+          button[type="submit"]
+            border: 0 none
+            outline: 0 none
+            background: transparent none
+            cursor: pointer
+            margin: 0
+            padding: 0
+            float: right
+            width: 86px
+            height: 24px
+            vertical-align: middle
+            display: block
+            &:hover
+              #subscribe_newsletter_button
+                +position(0,-72px)
+            &:active
+              #subscribe_newsletter_button
+                +position(0,-24px)
+            #subscribe_newsletter_button
+              +sprite("/images/subscribe_button.png")
+              +position(0,-120px)
+              display: block
+              cursor: pointer
+              height: 24px
+              width: 86px
+              float: left
+              padding: 5px 0
+              text-align: center
+              &:hover
+                +position(0,-72px)
+              &:active
+                +position(0,-24px)
+              span
+                font-family: 'Droid Sans', Arial, sans-serif !important
+                font-size: 13px !important
+                color: white !important
+                text-shadow: $blue_darker 0 -1px 0 !important
+      #colophon
+        padding: 1em 0
+        margin-top: -84px
+        a#softa_logo
+          +sprite("/images/softa_logo.png")
+          display: block
+          float: left
+          height: 50px
+          width: 110px
+          margin-right: 1em
+          &:hover
+            +position(0,-50px)
+        p.copyright_info
+          float: left
+          padding: 1.75em 0
+          color: #888
+          a
+            color: $blue_light
+            text-decoration: none
+            &:hover
+              text-decoration: none
+              color: $blue_light + #222
+            &:active
+              color: $blue
+              position: relative
+              top: 1px

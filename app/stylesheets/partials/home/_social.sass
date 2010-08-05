@@ -1,0 +1,70 @@
+@import "partials/utilities/utilities.sass"
+body
+  #root
+    #mailee_blog, #mailee_twitter
+      h2
+        font-family: 'Droid Sans', arial, sans-serif
+        text-shadow: #fff 0 1px 0
+        text-rendering: optimizeLegibility
+        img
+          vertical-align: bottom
+        a
+          color: $blue
+          text-decoration: none
+          &:hover
+            color: $blue_light
+            text-decoration: none
+          &:active
+            color: $blue_dark
+      #mailee_rss_blog
+        .rssBody
+          ul
+            margin: 0
+            padding: 0
+            list-style: none
+            li
+              margin: 0
+              padding: 0
+              h3
+                margin: 0
+                padding: 0
+                a
+                  text-decoration: none
+                  font-weight: 900
+                  text-shadow: #fff 0 1px 0
+              p
+                padding: .5em 0
+                font-size: 14px
+                color: #666
+                text-shadow: #fff 0 1px 0
+                text-rendering: optimizeLegibility
+    #mailee_blog
+      +column(15)
+      +append(1)
+    #mailee_twitter
+      +column(8)
+      +last
+      .mailee_tweets
+        color: #000
+        .tweet_list
+          +rounded(.5em)
+          list-style-type: none
+          margin: 0
+          padding: 0
+          background-color: #fff
+          border: 1px solid #ccc
+          .awesome, .epic
+            text-transform: uppercase
+          li
+            overflow-y: auto
+            overflow-x: hidden
+            padding: 1em
+            border-top: 1px solid #ccc
+            &:first-child
+              border-top: 0 none
+          .tweet_avatar
+            padding-right: 1em
+            float: left
+            img
+              vertical-align: middle
+              margin-bottom: 2em

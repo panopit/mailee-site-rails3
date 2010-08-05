@@ -1,0 +1,111 @@
+.content_wrapper
+  #mailee_prices
+    %h1 Preços
+    %h2 Como funciona?
+    %p{:style => 'font-size:1.25em;'}
+      Você compra um <strong>pacote de envios</strong> e pode usar ao longo do tempo que quiser.
+      %br
+      É como um celular <strong>pré-pago</strong>, só que seus créditos nunca expiram!
+    .clear
+    .span-13.append-1
+      %table#prices_table{ :cellspacing => 0, :cellpadding => 0 }
+        %thead
+          %tr
+            %th.right_aligned
+              %h3 Pacote
+            %th.right_aligned
+              %h3 Preço
+            %th.centered
+              %h3 Preço por envio
+        %tbody
+          %tr
+            %td.right_aligned
+              %strong 500 créditos
+            %td.right_aligned.price R$ 18,00
+            %td.centered R$ 0,036 por envio
+          %tr.even
+            %td.right_aligned
+              %strong 1 mil créditos
+            %td.right_aligned.price R$ 25,00
+            %td.centered R$ 0,024 por envio
+          %tr
+            %td.right_aligned
+              %strong 5 mil créditos
+            %td.right_aligned.price R$ 50,00
+            %td.centered R$ 0,01 por envio
+          %tr.even
+            %td.right_aligned
+              %strong 10 mil créditos
+            %td.right_aligned.price R$ 70,00
+            %td.centered R$ 0,007 por envio
+          %tr
+            %td.right_aligned
+              %strong 25 mil créditos
+            %td.right_aligned.price R$ 150,00
+            %td.centered R$ 0,006 por envio
+          %tr.even
+            %td.right_aligned
+              %strong 50 mil créditos
+            %td.right_aligned.price R$ 250,00
+            %td.centered R$ 0,005 por envio
+          %tr
+            %td.right_aligned
+              %strong 75 mil créditos
+            %td.right_aligned.price R$ 330,00
+            %td.centered R$ 0,0044 por envio
+          %tr.even
+            %td.right_aligned
+              %strong 100 mil créditos
+            %td.right_aligned.price R$ 400,00
+            %td.centered R$ 0,004 por envio
+          %tr
+            %td.right_aligned
+              %strong 175 mil créditos
+            %td.right_aligned.price R$ 630,00
+            %td.centered R$ 0,0036 por envio
+          %tr.even
+            %td.right_aligned
+              %strong 250 mil créditos
+            %td.right_aligned.price R$ 700,00
+            %td.centered R$ 0,0028 por envio
+          %tr
+            %td.right_aligned
+              %strong 500 mil créditos
+            %td.right_aligned.price R$ 1.100,00
+            %td.centered R$ 0,0022 por envio
+          %tr.even
+            %td.right_aligned
+              %strong 1 milhão de créditos
+            %td.right_aligned.price R$ 1.800,00
+            %td.centered R$ 0,0018 por envio
+      %p Precisa de um pacote maior? #{link_to 'Entre em contato', @commercial_mail}.
+    .span-10.last
+      %h3 Formas de pagamento
+      %p
+        Trabalhamos com o #{link_to 'PagSeguro', 'https://pagseguro.uol.com.br/'}, da UOL, que aceita as seguintes formas de pagamento:
+      .span-5
+        %ul
+          %li Saldo PagSeguro
+          %li Visa
+          %li MasterCard
+          %li Diners
+          %li American Express
+          %li Hipercard
+          %li Aura
+      .span-5.last
+        %ul
+          %li Banco Bradesco
+          %li Banco Itaú
+          %li Banco Unibanco
+          %li Banco do Brasil
+          %li Banco Banrisul
+          %li Boleto Bancário
+        %br
+      .clear
+      %hr
+      %h3 Possui uma agência?
+      %p #{link_to 'Entre em contato', @commercial_mail} para conhecer nossos descontos.
+      %hr
+      %h1
+        %a.signup_now{ :href => @signup_path } Contrate já &raquo;
+    .clear

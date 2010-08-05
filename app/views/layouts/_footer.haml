@@ -1,0 +1,59 @@
+.footer_wrapper
+  .span-5.append-1
+    %h3 Políticas
+    %ul
+      %li= link_to 'Política anti-spam', spam_path
+      %li= link_to 'Política de privacidade', privacy_path
+      %li= link_to 'Termos de uso', terms_path
+  .span-5.append-1
+    %h3 Contato
+    %ul
+      %li= link_to 'Suporte', support_mail
+      %li= link_to 'Comercial', commercial_mail
+  .span-5.append-1
+    %h3 Documentação
+    %ul
+      %li= link_to 'Help', help_path
+      %li= link_to 'Melhores práticas', best_practices_path
+    %hr
+    .web_links
+      = link_to((image_tag('social/rss_16.png') + ' Blog'), blog_path)
+      &nbsp;&nbsp;&nbsp;
+      = link_to((image_tag('social/twitter_16.png') + ' Twitter'), twitter_path)
+  .span-6.last
+    #newsletter
+      %h3 Receba nossa newsletter
+      %form#mailee-form{ :action=>"http://mailee.mailee.me/go/add_contact_form", :method => "post" }
+        %fieldset
+          %input{ :name => "key", :type => "hidden", :value => "f9b5d3" }
+          %input{ :name => "url_ok", :type => "hidden", :value => form_ok_url }
+          %input{ :name => "url_error", :type => "hidden", :value => form_error_url }
+          %input{ :name => "list[]", :type => "hidden", :value => "22642" }
+          %label{ :for => "name" } Nome
+          %br
+          %input#name.title{ :name => "name", :type => "text", :tabindex => 6 }
+          %br
+          %label{:for => "email" } Email
+          %br
+          %input#email.title{ :name => "email", :type => "text", :tabindex => 7}
+          %br
+          %button{ :type => "submit"}
+            #subscribe_newsletter_button
+              %span Cadastrar
+          %p.quiet &asymp; 1 email por mês
+          .clear
+      :javascript 
+        document.getElementById('mailee-form').onsubmit = function(){
+          re = /^[a-z0-9\._-]+@([a-z0-9][a-z0-9-_]*[a-z0-9-_]\.)+([a-z-_]+\.)?([a-z-_]+)$/
+          if(!this.email.value.match(re)) {
+            alert("Confira o preenchimento do seu email.");
+            this.email.focus();
+            return false;
+          }
+        return true;
+        }
+  .clear
+  #colophon
+    #{link_to "", 'http://www.softa.com.br/', :id => "softa_logo", :title => "Softa"}
+    %p.copyright_info Copyright &copy; 2010
+    .clear

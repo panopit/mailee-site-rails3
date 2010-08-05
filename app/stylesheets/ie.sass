@@ -1,0 +1,35 @@
+@import blueprint
++blueprint-ie
+@import "partials/utilities/utilities.sass"
+body
+  #root
+    #header
+      .header_wrapper
+        text-align: left
+    #showcase
+      .showcase_wrapper
+        text-align: left
+    #content
+      .content_wrapper, .signup_wrapper
+        text-align: left
+      #mailee_resources
+        border: 5px solid rgb(255,255,255)
+    #footer
+      .footer_wrapper
+        text-align: left
+        input[type="text"], input[type="password"]
+          +rounded(6px)
+          width: 210px
+          padding-left: 5px
+          padding-right: 5px
+          background-color: #444
+          border-color: #888
+          color: #bbb
+          &:focus
+            background-color: #000
+            border-color: #ddd
+            color: white
+            outline: 0
+        ul
+          li
+            

@@ -1,0 +1,65 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "pt-BR" , "xml:lang" => "pt-BR"}
+  %head
+    %meta{ "http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
+    %title= @title
+    = stylesheet_link_tag 'screen', :charset => "utf-8", :media => 'screen, projection'
+    /[if IE]
+      = stylesheet_link_tag 'ie', :charset => "utf-8", :media => 'screen, projection'
+    %link{ :rel   => "home",          :href      => "http://www.mailee.me/" }
+    %link{ :rel   => "alternate",     :href      => "http://blog.mailee.me/rss.xml", :type => "application/rss+xml", :title => "RSS" }
+    %link{ :rel   => "index",         :href      => "http://www.mailee.me/sitemap" }
+    %meta{ :name  => "Author",        :content   => "Softa" }
+    = @metatags
+    %meta{ :name => "google-site-verification", :content => "xPX2YKk66CJWtqIoNfnFdDgXJr2Imf8dB0EgipGb2I0" }
+    %link{ :href => "http://fonts.googleapis.com/css?family=Droid+Sans:bold", :rel => "stylesheet", :type => "text/css" }
+    = javascript_include_tag 'jquery-1.4.2.min'
+    /[if IE]
+      = javascript_include_tag 'ie6/jquery.reject.min'
+      :javascript 
+        $(document).ready(function(){
+          $.reject({
+            display: ['chrome', 'firefox','safari','msie','gcf'],
+            header: 'Seu navegador está desatualizado',
+            paragraph1: 'O navegador que você está utilizando não é suportado pelo Mailee.me',
+            paragraph2: 'Instale um dos navegadores abaixo para continuar.',
+            closeMessage: 'Ao fechar essa janela você entende que sua experiência nesse site não será a melhor possível.',
+            closeLink: 'Fechar essa notificação.',
+            imagePath: '../../images/browsers/',
+            closeCookie: true
+          });
+          return false;
+        });
+    = javascript_include_tag 'tweet/jquery.tweet'
+    = javascript_include_tag 'zrssfeed/jquery.zrssfeed.min'
+    = javascript_include_tag 'zrssfeed/jquery.zrssfeed.min'
+    :javascript 
+      $(document).ready(function(){
+        $(".mailee_tweets").tweet({
+          username: "maileeme",
+          join_text: "auto",
+          avatar_size: 32,
+          count: 5,
+          auto_join_text_default: "disse,",
+          auto_join_text_ed: "we",
+          auto_join_text_ing: "we were",
+          auto_join_text_reply: "respondemos para",
+          auto_join_text_url: "estavamos conferindo",
+          loading_text: "carregando tweets..."
+        });
+        $('#mailee_rss_blog').rssfeed('http://blog.mailee.me/rss.xml', {
+          limit: 5,
+          header: false,
+          titletag: 'h3',
+          date: false,
+          errormsg: 'Ooops. Ocorreu um erro ao carregar o Feed.'
+        });
+      });
+    %link{ :rel => 'shortcut icon', :href => 'favicon.ico' }
+  %body{:id => body_id}
+    #root
+      #header= render('layouts/header')
+      #content= yield
+      = yield :signup_bar
+      #footer= render('layouts/footer')
+    = render('layouts/google_analytics')

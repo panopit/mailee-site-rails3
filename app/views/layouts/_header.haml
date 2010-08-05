@@ -1,0 +1,27 @@
+.header_wrapper
+  #login_signup_box
+    -#%a#login_button{ :href => "#", :title => 'Login' } Login
+    = link_to 'Experimente de graça', signup_path, :id => :signup_button, :title => 'Experimente de graça' 
+    -# %a#signup_button{ :href => @signup_path, :title => 'Experimente de graça' } Experimente de graça
+    .clear
+  #logo
+    %a{ :href => root_path }= image_tag('mailee_logo.png', :alt => 'Mailee.me', :title => 'Mailee.me · Email Marketing 2.0')
+  %ul#navigation
+    %li= link_to "Home",     root_path,       :class => "#{selected(:home)}       home"
+    %li= link_to "Recursos", tour_path,       :class => "#{selected(:resources)}  resources"
+    %li= link_to "Preços",   prices_path,     :class => "#{selected(:prices)}     prices"
+    %li= link_to "Cadastro", signup_path,     :class => "#{selected(:signup)}     signup"
+    %li= link_to "Help",     help_path,       :class => "#{selected(:help)}       help"
+  .clear
+.clear
+  -#
+    #login_form{ :style => 'display:none;' }
+      #TODO
+      Formulário para Login Global aqui
+    :javascript 
+      $("a#login_button").click(function(){
+        if($("#login_form").is (':visible'))
+          $("#login_form").slideUp()
+        else
+          $("#login_form").slideDown()
+      })

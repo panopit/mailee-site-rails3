@@ -1,0 +1,39 @@
+// COLORS
+$blue_light:  #5D93CA
+$blue:        #2255A0
+$blue_dark:   #0C317F
+$blue_darker: #041C65
+$green:       #8CC63F
+$red:         #CC3333
+$orange:      #F7931E
+$yellow:      #FFCB05
+$purple:      #932787
+// ROUNDED
+=rounded($radius)
+  -moz-border-radius:     $radius
+  -webkit-border-radius:  $radius
+  -khtml-border-radius:   $radius
+  border-radius:          $radius
+// SHADOWS
+=box-shadow($x: 0, $y: 0, $radius: 3px, $color: rgba(0,0,0,0.1))
+  box-shadow:          $x $y $radius $color
+  -moz-box-shadow:     $x $y $radius $color
+  -webkit-box-shadow:  $x $y $radius $color
+  -khtml-box-shadow:   $x $y $radius $color
+=image-shadow($color: rgba(0,0,0,0.3))
+  +box-shadow(0, 1px, 2px, $color)
+=dark-text($color: #efefef, $x: 0, $y: 1px, $radius: 0)
+  text-shadow: $color $x $y $radius
+=light-text($color: #202020, $x: 0, $y: -1px, $radius: 0)
+  text-shadow: $color $x $y $radius
+// SPRITES
+=sprite($image_path)
+  background:
+    color: transparent
+    image: url($image_path)
+    attachment: scroll
+    repeat: no-repeat
+  border: 0 none
+  overflow: hidden
+=position($x, $y)
+  background-position: $x $y

@@ -1,0 +1,110 @@
+#showcase
+  .light
+    .showcase_wrapper
+      .showcase
+        .description.span-12.last
+          %h1.slideme Email marketing 2.0
+          %p.slideme
+            Crie templates, envie mensagens e acompanhe
+            %br
+            resultados em um só lugar.
+          %p.slideme
+            Email marketing 2.0 tem criador de templates,
+            %br
+            geolocalização, integração com redes sociais,
+            %br
+            e muito mais!
+          %h2.slideme
+            %a.take_the_tour{ :href => tour_path } Saiba mais &raquo;
+          %h2.slideme
+            %a.signup_now{ :href => signup_path } Experimente grátis &raquo;
+        .video.slideme.span-12
+          .video_wrapper
+            <object width="475" height="300"><param name="movie" value="http://www.youtube.com/v/PswPZ53yCVY&amp;hl=en_US&amp;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/PswPZ53yCVY&amp;hl=en_US&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="475" height="300"></embed></object>
+      .showcase{:style => 'display:none'}
+        .span-11
+          .showcase_image
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/why_use.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/why_use_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+        .span-12.prepend-1.last
+          .slideme
+            %h1 1. Criador de templates
+          .slideme
+            %h1 2. Geolocalização
+          .slideme
+            %h1 3. Integração com redes sociais
+          .slideme
+            %h1 4. Atualizações frequentes
+          .slideme
+            %h1 5. Suporte técnico incansável
+      .showcase{:style => 'display:none'}
+        .span-11.append-1
+          .slideme
+            %h1 1. Crie templates HTML como quiser
+          .slideme
+            %h1 2. Seus clientes editam o conteúdo
+          .slideme
+            %h1 3. Seu design permanece intacto
+        .span-12.last
+          .showcase_image
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/designers.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/design_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+      .showcase{ :style => 'display:none'}
+        .span-12.last
+          .showcase_image.slideme
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/developers.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/developers_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+        .span-11.prepend-1
+          .slideme
+            %h1 1. Integre com sua aplicação através de nossa API REST
+          .slideme
+            %h1 2. Integre com o Google Analytics
+          .slideme
+            %h1 3. Divirta-se enquanto isso
+      .showcase{ :style => 'display:none'}
+        .span-12.last
+          .slideme
+            %h1 1. Faça você mesmo seu email marketing
+          .slideme
+            %h1 2. Crie templates sem precisar saber HTML
+          .slideme
+            %h1 3. Acompanhe resultados e ganhe cada vez mais
+        .span-11.prepend-1
+          .showcase_image.slideme
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/companies.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/companies_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+      .showcase{ :style => 'display:none'}
+        .span-11
+          .showcase_image
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/agency.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/agency_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+        .span-12.prepend-1.last
+          .slideme
+            %h1 1. Gerencie as campanhas de seus clientes
+          .slideme
+            %h1 2. Cobre pelo valor agregado
+          .slideme
+            %h1 3. Pague com desconto
+.showcase_selector
+  .container
+    %a.tab.on{ :href => "#" } apresentação
+    %a.tab{ :href => "#" } por que usar?
+    %a.tab{ :href => "#" } para designers
+    %a.tab{ :href => "#" } para desenvolvedores
+    %a.tab{ :href => "#" } para empresas
+    %a.tab{ :href => "#" } para agências
