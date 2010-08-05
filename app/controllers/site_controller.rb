@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SiteController < ApplicationController
   
   def index
@@ -45,7 +46,9 @@ class SiteController < ApplicationController
   end
 
 protected
+
   before_filter :set_defaults
+
   def set_defaults
     title "Email marketing com criador de templates, geolocalização e integração com redes sociais · Mailee.me"
   end
@@ -53,11 +56,15 @@ protected
   def title(title)
     @title = title
   end
+
   helper_method :selected_menu, :body_id
+
   def selected_menu
     @selected_menu ||= action_name
   end
+
   def body_id
     @body_id ||= selected_menu
   end
+
 end
