@@ -1,6 +1,24 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+pt:
+
+  lang: 'pt-br'
+
+  reject:
+    header: 'Seu navegador está desatualizado'
+    paragraph_one: 'O navegador que você está utilizando não é suportado pelo Mailee.me'
+    paragraph_two: 'Instale um dos navegadores abaixo para continuar.'
+    close_message:  'Ao fechar essa janela você entende que sua experiência nesse site não será a melhor possível.'
+    close_link: 'Fechar essa notificação.'
+
+  tweet:
+    auto_join_text_default: 'disse'
+    auto_join_text_ed: "we"
+    auto_join_text_ing: "we were"
+    auto_join_text_reply: "respondemos para"
+    auto_join_text_url: "estavamos conferindo"
+    loading_text: "carregando Twitter…"
+
   resources:
     site: 'site'

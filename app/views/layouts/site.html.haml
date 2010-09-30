@@ -1,5 +1,5 @@
 !!!5
-%html{ :lang => 'pt-br'}
+%html{ :lang => t('lang')}
   %head
     %meta{ :charset => 'UTF-8' }
     /[if IE]
@@ -23,11 +23,11 @@
         $(document).ready(function(){
           $.reject({
             display:     ['chrome', 'firefox','safari','msie','gcf'],
-            header:       'Seu navegador está desatualizado',
-            paragraph1:   'O navegador que você está utilizando não é suportado pelo Mailee.me',
-            paragraph2:   'Instale um dos navegadores abaixo para continuar.',
-            closeMessage: 'Ao fechar essa janela você entende que sua experiência nesse site não será a melhor possível.',
-            closeLink:    'Fechar essa notificação.',
+            header:       #{t('reject.header')},
+            paragraph1:   #{t('reject.paragraph_one')},
+            paragraph2:   #{t('reject.paragraph_two')},
+            closeMessage: #{t('reject.close_message')},
+            closeLink:    #{t('reject.close_link')},
             imagePath:    '../../images/browsers/',
             closeCookie:  true
           });
@@ -41,12 +41,12 @@
           join_text: "auto",
           avatar_size: 32,
           count: 5,
-          auto_join_text_default: "disse,",
-          auto_join_text_ed: "we",
-          auto_join_text_ing: "we were",
-          auto_join_text_reply: "respondemos para",
-          auto_join_text_url: "estavamos conferindo",
-          loading_text: "carregando tweets..."
+          auto_join_text_default: #{'tweet.auto_join_text_default'},
+          auto_join_text_ed: #{'tweet.auto_join_text_ed'},
+          auto_join_text_ing: #{'tweet.auto_join_text_ing'},
+          auto_join_text_reply: #{'tweet.auto_join_text_reply'},
+          auto_join_text_url: #{'tweet.auto_join_text_url'},
+          loading_text: #{'tweet.loading_text'}
         });
         $('#mailee_rss_blog').rssfeed('http://blog.mailee.me/rss.xml', {
           limit: 5,
