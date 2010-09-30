@@ -7,19 +7,15 @@
     %meta{ :name => 'robots', :content => 'index, follow' }
     %title= @title
     = stylesheet_link_tag 'screen'
-    /[if IE]
-      = stylesheet_link_tag 'ie'
     %link{ :rel   => 'home',          :href      => 'http://mailee.me/' }
     %link{ :rel   => 'alternate',     :href      => 'http://blog.mailee.me/rss.xml', :type => 'application/rss+xml', :title => 'RSS' }
     %link{ :rel   => 'index',         :href      => 'http://mailee.me/sitemap' }
     %meta{ :name  => 'Author',        :content   => 'Softa' }
     %link{ :rel   => 'canonical',     :href      => 'http://mailee.me/' }
-    = yield :metatags
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Sans:bold'
-    = javascript_include_tag 'jquery-1.4.2.min'
-    = javascript_include_tag 'jquery.cookie'
-    = javascript_include_tag 'referrer'
+    = javascript_include_tag 'jquery-1.4.2.min', 'jquery.cookie', 'referrer'
     /[if IE]
+      = stylesheet_link_tag 'ie'
       = javascript_include_tag 'ie6/jquery.reject.min'
       :javascript
         $(document).ready(function(){
@@ -35,6 +31,7 @@
           });
           return false;
         });
+    = yield :metatags
     %link{ :rel => 'shortcut icon', :href => 'favicon.ico', :type => 'image/vnd.microsoft.icon' }
   %body{:id => body_id}
     #root

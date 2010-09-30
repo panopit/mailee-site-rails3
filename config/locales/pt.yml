@@ -21,7 +21,7 @@ pt:
     loading_text: "carregando Twitter…"
 
   blog:
-    errormsg: 'Ooops. Ocorreu um erro ao carregar o Feed.'
+    errormsg: 'Ooops. Ocorreu um erro ao carregar as mensagens do blog.'
 
   header:
     try_for_free: 'Experimente de graça'

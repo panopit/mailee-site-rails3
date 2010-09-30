@@ -1,10 +1,33 @@
+- content_for :metatags do
+  = javascript_include_tag 'tweet/jquery.tweet', 'zrssfeed/jquery.zrssfeed.min'
+  :javascript
+    $(function(){
+      $('.mailee_tweets').tweet({
+        username: "maileeme",
+        join_text: "auto",
+        avatar_size: 32,
+        count: 5,
+        auto_join_text_default: "#{t('tweet.auto_join_text_default')}",
+        auto_join_text_ed: "#{t('tweet.auto_join_text_ed')}",
+        auto_join_text_ing: "#{t('tweet.auto_join_text_ing')}",
+        auto_join_text_reply: "#{t('tweet.auto_join_text_reply')}",
+        auto_join_text_url: "#{t('tweet.auto_join_text_url')}",
+        loading_text: "#{t('tweet.loading_text')}"
+      });
+      $('#mailee_rss_blog').rssfeed('http://blog.mailee.me/rss.xml', {
+        limit: 5,
+        header: false,
+        titletag: 'h3',
+        date: false,
+        errormsg: "#{t('blog.errormsg')}"
+      });
+    });
 #mailee_blog
   .blog_wrapper
     %h2= link_to((image_tag("social/rss_32.png") + ' Blog'), blog_path)
-    -#= rss_list 'http://blog.mailee.me/rss.xml'
     #mailee_rss_blog
 #mailee_twitter
   .twitter_wrapper
     %h2= link_to((image_tag("social/twitter_32.png") + ' Twitter'), twitter_path)
-    .mailee_tweets
+    .mailee_tweets &nbsp;
 .clear
