@@ -17,6 +17,8 @@
     = yield :metatags
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Sans:bold'
     = javascript_include_tag 'jquery-1.4.2.min'
+    = javascript_include_tag 'jquery.cookie'
+    = javascript_include_tag 'referrer'
     /[if IE]
       = javascript_include_tag 'ie6/jquery.reject.min'
       :javascript
@@ -33,29 +35,6 @@
           });
           return false;
         });
-    = javascript_include_tag 'tweet/jquery.tweet', 'zrssfeed/jquery.zrssfeed.min'
-    :javascript
-      $(document).ready(function(){
-        $(".mailee_tweets").tweet({
-          username: "maileeme",
-          join_text: "auto",
-          avatar_size: 32,
-          count: 5,
-          auto_join_text_default: #{'tweet.auto_join_text_default'},
-          auto_join_text_ed: #{'tweet.auto_join_text_ed'},
-          auto_join_text_ing: #{'tweet.auto_join_text_ing'},
-          auto_join_text_reply: #{'tweet.auto_join_text_reply'},
-          auto_join_text_url: #{'tweet.auto_join_text_url'},
-          loading_text: #{'tweet.loading_text'}
-        });
-        $('#mailee_rss_blog').rssfeed('http://blog.mailee.me/rss.xml', {
-          limit: 5,
-          header: false,
-          titletag: 'h3',
-          date: false,
-          errormsg: #{t('blog.errormsg')}
-        });
-      });
     %link{ :rel => 'shortcut icon', :href => 'favicon.ico', :type => 'image/vnd.microsoft.icon' }
   %body{:id => body_id}
     #root
