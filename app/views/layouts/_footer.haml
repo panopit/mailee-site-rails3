@@ -1,10 +1,10 @@
 .footer_wrapper
   .span-5.append-1
-    %h3 Políticas
+    %h3 #{t('footer.policy')}
     %ul
-      %li= link_to 'Política anti-spam', spam_path
-      %li= link_to 'Política de privacidade', privacy_path
-      %li= link_to 'Termos de uso', terms_path
+      %li= link_to t('footer.anti_spam_policy'), spam_path
+      %li= link_to t('footer.privacy_policy'), privacy_path
+      %li= link_to t('footer.terms_of_use'), terms_path
   .span-5.append-1
     %h3 Contato
     %ul

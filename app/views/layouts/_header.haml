@@ -1,15 +1,14 @@
 .header_wrapper
   #login_signup_box
     #{link_to 'Login', '#', :id=> :login_button, :title => 'Login'}
-    #{link_to 'Experimente de graça', signup_path, :id => :signup_button, :title => 'Experimente de graça'}
+    #{link_to t('header.try_for_free'), signup_path, :id => :signup_button, :title => t('header.try_for_free')}
     .clear
   #logo= link_to image_tag('mailee_logo.png', :alt => 'Mailee.me', :title => 'Mailee.me · Email Marketing 2.0'), root_path
   %ul#navigation
-    -#= raise selected_menu
-    %li= link_to 'Home',     root_path,       :class => "#{selected(:index)} home"
-    %li= link_to 'Recursos', tour_path,       :class => "#{selected(:tour)} resources"
-    %li= link_to 'Preços',   prices_path,     :class => "#{selected(:prices)} prices"
-    %li= link_to 'Cadastro', signup_path,     :class => "#{selected(:signup)} signup"
-    %li= link_to 'Help',     help_path,       :class => "#{selected(:help)} help"
+    %li= link_to 'Home',                          root_path,       :class => "#{selected(:index)} home"
+    %li= link_to t('header.nav.tour'),     tour_path,       :class => "#{selected(:tour)} resources"
+    %li= link_to t('header.nav.prices'),   prices_path,     :class => "#{selected(:prices)} prices"
+    %li= link_to t('header.nav.signup'),   signup_path,     :class => "#{selected(:signup)} signup"
+    %li= link_to 'Help',                          help_path,       :class => "#{selected(:help)} help"
   .clear
 .clear

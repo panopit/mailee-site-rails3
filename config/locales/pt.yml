@@ -20,5 +20,28 @@ pt:
     auto_join_text_url: "estavamos conferindo"
     loading_text: "carregando Twitter…"
 
+  blog:
+    errormsg: 'Ooops. Ocorreu um erro ao carregar o Feed.'
+
+  header:
+    try_for_free: 'Experimente de graça'
+    nav:
+      tour: 'Recursos'
+      prices: 'Preços'
+      signup: 'Cadastro'
+
+  easy_signup:
+    see_the_prices: 'Conheça os preços'
+    test_for_free: 'faça um teste grátis'
+
   resources:
     site: 'site'
+
+  footer:
+    policy: 'Políticas'
+    anti_spam_policy: 'Política anti-spam'
+    privacy_policy: 'Política de privacidade'
+    terms_of_use: 'Termos de uso'
+
+
+
