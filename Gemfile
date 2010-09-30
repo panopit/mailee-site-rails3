@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.0'
 gem 'pg'
 gem 'haml'
 gem 'pivotal-tracker'
 gem 'compass', '>= 0.10.3'
 gem 'RedCloth'
+gem 'mongrel', '1.2.0.pre2'
 #gem 'i18n_routing'
 
 # Use unicorn as the web server

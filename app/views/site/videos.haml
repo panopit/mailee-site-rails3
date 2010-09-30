@@ -1,9 +1,6 @@
-- @title         = "Videos · Email Marketing 2.0 · Mailee.me"
-- @body_id       = "videos"
-- @showcase      = false
-- @metatags      = partial("../videos/metatags")
-- @signup_bar    = true
-- @selected_menu = :videos
+- content_for :metatags do
+  %meta{ :name => 'Keywords', :content => 'Mailee.me, Mailee, Email, Marketing, 2.0' }
+  %meta{ :name => 'Description', :content => 'Mailee.me · Crie templates, envie mensagens e acompanhe resultados em um só lugar. Email marketing 2.0 tem criador de templates, geolocalização, integração com redes sociais, e muito mais!' }
 .content_wrapper
   #mailee_videos
     .videos_wrapper
@@ -18,7 +15,7 @@
       .tubes.span-21
         - 8.times do
           .video_wrapper
-            .video_box= img("video.jpg")
+            .video_box= image_tag 'video.jpg'
             .video_name
               %p
                 Video Name

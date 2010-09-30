@@ -7,10 +7,12 @@ class SiteController < ApplicationController
 
   def bad_browsers
     title "Navegador inválido · Email Marketing 2.0 · Mailee.me"
+    @body_id = :bad_browsers
   end
 
   def best_practices
     title "Melhores práticas · Email Marketing 2.0 · Mailee.me"
+    @body_id = :best_practices
   end
 
   def form_ok; end
@@ -18,10 +20,10 @@ class SiteController < ApplicationController
 
   def prices
     title "Preços · Email Marketing 2.0 · Mailee.me"
+    @body_id = :prices
   end
 
   def privacy
-    #title "Navegador inválido · Email Marketing 2.0 · Mailee.me"
     title "Política de Privacidade · Email Marketing 2.0 · Mailee.me"
     @body_id = :privacy_policy
   end

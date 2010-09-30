@@ -9,8 +9,8 @@
       intro_text: null,                       // [string]   do you want text BEFORE your your tweets?
       outro_text: null,                       // [string]   do you want text AFTER your tweets?
       join_text:  null,                       // [string]   optional text in between date and tweet, try setting to "auto"
-      auto_join_text_default: "eu disse,",    // [string]   auto text for non verb: "i said" bullocks
-      auto_join_text_ed: "eu",                // [string]   auto text for past tense: "i" surfed
+      auto_join_text_default: "i said,",      // [string]   auto text for non verb: "i said" bullocks
+      auto_join_text_ed: "i",                 // [string]   auto text for past tense: "i" surfed
       auto_join_text_ing: "i am",             // [string]   auto tense for present tense: "i was" surfing
       auto_join_text_reply: "i replied to",   // [string]   auto tense for replies: "i replied to" @someone "with"
       auto_join_text_url: "i was looking at", // [string]   auto tense for urls: "i was looking at" http:...
@@ -83,13 +83,13 @@
         return '' + n + ' ' + singular + (n == 1 ? '' : 's');
       };
       if(delta < 60) {
-      return 'menos de um minuto atrás';
+      return 'less than a minute ago';
       } else if(delta < (60*60)) {
-      return 'aproximadamente ' + pluralize("minuto", parseInt(delta / 60)) + ' atrás';
+      return 'about ' + pluralize("minute", parseInt(delta / 60)) + ' ago';
       } else if(delta < (24*60*60)) {
-      return 'cerca de ' + pluralize("hora", parseInt(delta / 3600)) + ' atrás';
+      return 'about ' + pluralize("hour", parseInt(delta / 3600)) + ' ago';
       } else {
-      return 'cerca de ' + pluralize("dia", parseInt(delta / 86400)) + ' atrás';
+      return 'about ' + pluralize("day", parseInt(delta / 86400)) + ' ago';
       }
     }
 
@@ -98,10 +98,10 @@
       if (s.list) {
         return proto+"//api.twitter.com/1/"+s.username[0]+"/lists/"+s.list+"/statuses.json?per_page="+s.count+"&callback=?";
       } else if (s.query == null && s.username.length == 1) {
-        return proto+'//api.twitter.com/1/statuses/user_timeline.json?screen_name='+s.username[0]+'&count='+s.count+'&callback=?';
+        return proto+'//api.twitter.com/1/statuses/user_timeline.json?screen_name='+s.username[0]+'&count='+s.count+'&include_rts=1&callback=?';
       } else {
         var query = (s.query || 'from:'+s.username.join(' OR from:'));
-        return proto+'//search.twitter.com/search.json?&q='+escape(query)+'&rpp='+s.count+'&callback=?';
+        return proto+'//search.twitter.com/search.json?&q='+encodeURIComponent(query)+'&rpp='+s.count+'&callback=?';
       }
     }
 

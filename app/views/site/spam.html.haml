@@ -1,72 +1,62 @@
+- content_for :metatags do
+  %meta{ :name => 'Keywords', :content => 'Mailee.me, Mailee, Email, Marketing, 2.0' }
+  %meta{ :name => 'Description', :content => 'Mailee.me · Crie templates, envie mensagens e acompanhe resultados em um só lugar. Email marketing 2.0 tem criador de templates, geolocalização, integração com redes sociais, e muito mais!' }
 .content_wrapper
   #mailee_anti_spam_policy
-    :textile
-      h1. Política Anti-SPAM
-
-      *SPAM* é uma mensagem de correio eletrônico (email) com fins comerciais enviada para uma pessoa sem a autorização prévia.
-
-      O Mailee é um sistema para fazer *#{link_to('email marketing baseado em permissões', 'http://en.wikipedia.org/wiki/Permission_marketing')}*.
-
-      Nós não gostamos de receber SPAM e nós não criamos o Mailee para ser uma ferramenta de SPAM. Nós não acreditamos que negócios possam dar certo, ainda mais na era da internet, com práticas desrespeitosas e não queremos trabalhar com clientes que pensem assim. Por isso, nós seguimos todas as normas legais, como o #{link_to('CAN-SPAM ACT', 'http://www.ftc.gov/bcp/edu/pubs/business/ecommerce/bus61.shtm')} estadunidense, e vamos além disso. Veja nossas medidas:
-
-      h2. Autorização
-
-      Todos os nossos clientes devem enviar mensagens apenas para os seguintes contatos:
-
-      * Contatos que tenham se cadastrado pelo site, no formulário do Mailee.
-      * Contatos que tenham se cadastrado em algum formulário, marcando um campo indicando que aceita receber mensagens. O campo não deve vir marcado por padrão.
-      * Contatos que tenham tido alguma relação comercial com o cliente nos últimos 3 anos.
-      * Contatos que tenham tenham autorizado o recebimento por telefone, fax, carta, verbalmente&hellip;se autorizou, pode!
-      * Contatos que não tenham solicitado descadastro no Mailee, ou em qualquer ferramenta usada anteriormente pelo cliente.
-      * Contatos que tenham sido comprados de um fornecedor que siga todas as normas acima e que tenham solicitado o recebimento de mensagens de parceiros do fornecedor, para os tipos de mensagens em questão. Qualquer dúvida, #{link_to('entre em contato','mailto:comercial@mailee.me')}.
-
-      <br/>
-      E não enviar para os seguintes contatos:
-
-      * Contatos que tenham sido comprados de um fornecedor que não siga todas as normas acima ou que não tenham solicitado o recebimento de mensagens de parceiros do fornecedor, para os tipos de mensagens em questão.
-      * Contatos cujos endereços tenham sido copiados da internet.
-      * Contatos não contatados nos últimos 3 anos.
-
-      h2. Descadastro
-
-      Todas as mensagens comerciais enviadas pelo Mailee devem ter uma ou mais formas de descadastro (unsubscribe):
-
-      * Descadastro automatico pelo Mailee (basta adicionar um link  com o id "unsubscribe" em sua mensagem).
-      * Descadastro pelo site do cliente integrado ao Mailee (basta colocar o formulário de descadastro disponibilizado na área de configuração do Mailee).
-      * Qualquer outra forma de descadastro, como o retorno da mensagem com o termo "DESCADASTRAR" ou no sistema do cliente (que pode ser integrado com Mailee via REST), desde que fique claro que o cliente tem a obrigação de informar no Mailee que o contato solicitou o descadastro, ou que o contato não seja importado em novas contas.
-
-      h2. Can-Spam Act
-
-      É uma boa prática seguir as normas do Can-Spam Act que incluem, além dos itens apresentados acima as seguintes obrigatoriedades para as mensagens comerciais:
-
-      * Colocar na mensagem o nome da empresa que está enviando.
-      * Colocar na mensagem o endereço da empresa que está enviando.
-      * Colocar na mensagem o telefone da empresa que está enviando.
-      * Explicar claramente o motivo do envio, como o contato entrou na lista, como o contato pode sair da lista, qual o assunto e qual a periodicidade dos envios.
-
-      O Mailee permite que você coloque estes dados de forma automática em suas mensagens, facilitando sua vida.
-
-      h2. Boas práticas
-
-      São consideradas boas práticas pela equipe do Mailee:
-
-      * Enviar mensagens com texto e não apenas imagens.
-      * Enviar mensagens curtas.
-      * Enviar mensagens com links para o site.
-      * Personalizar as mensagens com dados dos contatos.
-      * Segmentar corretamente as listas.
-      * Manter um envio periódico.
-
-      h2. Como identificamos Spammers
-
-      Estes são os mecanismos que temos no sistema para monitorar e identificar clientes que não estejam de acordo com as normas:
-
-      * Todos os clientes pagos devem ser aprovados pela nossa equipe.
-      * Monitoramos de forma automática todas as importações com muitos contatos, verificando algum padrão de inserção.
-      * Mensagens com muitos contatos inexistentes.
-      * Mensagens com muitas denúncias: 0.2% é um número limite, a não ser que a denúncia seja intencional.
-      * Nós estamos integrados com os maiores provedores de email do mundo, e recebemos automaticamente as denúncias destes.
-
-      h2. Dúvidas
-
-      Qualquer dúvida sobre estas regras deve ser endereçada a #{link_to('suporte@mailee.me', 'mailto:suporte@mailee.me')}
+    %h1 Política Anti-SPAM
+    %h2 O que é SPAM?
+    %p SPAM é uma mensagem de correio eletrônico (email) com fins comerciais enviada para uma pessoa sem a autorização prévia.
+    %p O Mailee.me é um sistema para fazer #{link_to('email marketing baseado em permissões', 'http://en.wikipedia.org/wiki/Permission_marketing')}.
+    %p Nós não gostamos de receber SPAM e nós não criamos o Mailee.me para ser uma ferramenta de SPAM. Nós não acreditamos que negócios possam dar certo, ainda mais na era da internet, com práticas desrespeitosas e não queremos trabalhar com clientes que pensem assim. Por isso, nós seguimos todas as normas legais, como o #{link_to('CAN-SPAM ACT', 'http://www.ftc.gov/bcp/edu/pubs/business/ecommerce/bus61.shtm')} estadunidense, e vamos além disso. Veja algumas de nossas medidas:
+    %h2 Autorização
+    %p Todos os nossos clientes devem enviar mensagens apenas para os seguintes contatos:
+    %ul
+      %li Contatos que tenham se cadastrado pelo site, no formulário do Mailee.me.
+      %li Contatos que tenham se cadastrado em algum formulário, marcando um campo indicando que aceita receber mensagens. O campo não deve vir marcado por padrão.
+      %li Contatos que tenham tido alguma relação comercial com o cliente nos últimos 3 anos.
+      %li Contatos que tenham tenham autorizado o recebimento por telefone, fax, carta, verbalmente&hellip;se autorizou, pode!
+      %li Contatos que não tenham solicitado descadastro no Mailee.me, ou em qualquer ferramenta usada anteriormente pelo cliente.
+      %li Contatos que tenham sido comprados de um fornecedor que siga todas as normas acima e que tenham solicitado o recebimento de mensagens de parceiros do fornecedor, para os tipos de mensagens em questão. Qualquer dúvida, #{link_to('entre em contato','mailto:comercial@mailee.me')}.
+    %p E não enviar para os seguintes contatos:
+    %ul
+      %li Contatos que tenham sido comprados de um fornecedor que não siga todas as normas acima ou que não tenham solicitado o recebimento de mensagens de parceiros do fornecedor, para os tipos de mensagens em questão.
+      %li Contatos cujos endereços tenham sido copiados da internet.
+      %li Contatos não contatados nos últimos 3 anos.
+    %hr
+    %h2 Descadastro
+    %p Todas as mensagens comerciais enviadas pelo Mailee.me devem ter uma ou mais formas de descadastro (unsubscribe):
+    %ul
+      %li Descadastro automatico pelo Mailee.me. Para saber saber como adicionar um link de descadastro em sua mensagem, leia no help o #{link_to 'link para descadastramento', help_path('templates_creating.html#linkparadescadastramentounsubscribe')}
+      %li Descadastro pelo site do cliente integrado ao Mailee.me. Para saber saber como adicionar um link de descadastro em sua mensagem, leia no help o #{link_to 'link para descadastramento', help_path('integration_form.html#gerandocdigoparadescadastro')}
+      -#
+        %li Qualquer outra forma de descadastro, como o retorno da mensagem com o termo "DESCADASTRAR" ou no sistema do cliente (que pode ser integrado com Mailee.me via REST), desde que fique claro que o cliente tem a obrigação de informar no Mailee.me que o contato solicitou o descadastro, ou que o contato não seja importado em novas contas.
+    %hr
+    %h2 Can-Spam Act
+    %p É uma boa prática seguir as normas do Can-Spam Act que incluem, além dos itens apresentados acima, as seguintes obrigatoriedades para as mensagens comerciais:
+    %ul
+      %li Colocar na mensagem o nome da empresa que está enviando.
+      %li Colocar na mensagem o endereço da empresa que está enviando.
+      %li Colocar na mensagem o telefone da empresa que está enviando.
+      %li Explicar claramente o motivo do envio, como o contato entrou na lista, como o contato pode sair da lista, qual o assunto e qual a periodicidade dos envios.
+    %p O Mailee.me permite que você coloque estes dados de forma automática em suas mensagens, facilitando sua vida.
+    %hr
+    %h2 Boas práticas
+    %p São consideradas boas práticas pela equipe do Mailee.me:
+    %ul
+      %li Enviar mensagens com texto e não apenas imagens.
+      %li Enviar mensagens curtas.
+      %li Enviar mensagens com links para o site.
+      %li Personalizar as mensagens com dados dos contatos.
+      %li Segmentar corretamente as listas.
+      %li Manter um envio periódico.
+    %hr
+    %h2 Como identificamos <em>Spammers</em>
+    %p Estes são os mecanismos que temos no sistema para monitorar e identificar clientes que não estejam de acordo com as normas:
+    %ul
+      %li Todos os clientes pagos passam por aprovação por nossa equipe.
+      %li Monitoramos de forma automática todas as importações com muitos contatos, verificando algum padrão de inserção.
+      %li Mensagens com muitos contatos inexistentes.
+      %li Mensagens com muitas denúncias: 0.2% é um número limite, a não ser que a denúncia seja intencional.
+      %li Nós estamos integrados com os maiores provedores de email do mundo, e recebemos automaticamente as denúncias destes.
+    %hr
+    %p Qualquer dúvida sobre estas regras deve ser endereçada a #{link_to('suporte@mailee.me', 'mailto:suporte@mailee.me')}
