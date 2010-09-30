@@ -12,6 +12,8 @@
     %li= link_to "Preços",   prices_path,     :class => "#{selected(:prices)}     prices"
     %li= link_to "Cadastro", signup_path,     :class => "#{selected(:signup)}     signup"
     %li= link_to "Help",     help_path,       :class => "#{selected(:help)}       help"
+    %li= link_to "Chat",     "http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14", :target => :_blank
+    
   .clear
 .clear
   -#
@@ -20,7 +22,7 @@
       Formulário para Login Global aqui
     :javascript 
       $("a#login_button").click(function(){
-        if($("#login_form").is (':visible'))
+        if($("#login_form").is(':visible'))
           $("#login_form").slideUp()
         else
           $("#login_form").slideDown()
