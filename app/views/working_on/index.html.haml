@@ -1,9 +1,10 @@
 - for story in @stories
   %h3= story.name
-  %strong Status: #{story.current_state}
-  %br
-  %strong Labels: #{story.labels}
-  %br
-  %strong Descrição:
+  %p
+    %strong Status: #{story.current_state}
+    %br
+    %strong Labels: #{story.labels}
+    %br
+    %strong Descrição:
   %p= story.name
   %hr

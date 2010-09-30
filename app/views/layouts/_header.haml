@@ -1,11 +1,9 @@
 .header_wrapper
   #login_signup_box
-    -#%a#login_button{ :href => "#", :title => 'Login' } Login
-    = link_to 'Experimente de graça', signup_path, :id => :signup_button, :title => 'Experimente de graça' 
-    -# %a#signup_button{ :href => @signup_path, :title => 'Experimente de graça' } Experimente de graça
+    #{link_to 'Login', '#', :id=> :login_button, :title => 'Login'}
+    #{link_to 'Experimente de graça', signup_path, :id => :signup_button, :title => 'Experimente de graça'}
     .clear
-  #logo
-    %a{ :href => root_path }= image_tag('mailee_logo.png', :alt => 'Mailee.me', :title => 'Mailee.me · Email Marketing 2.0')
+  #logo= link_to image_tag('mailee_logo.png', :alt => 'Mailee.me', :title => 'Mailee.me · Email Marketing 2.0'), root_path
   %ul#navigation
     %li= link_to "Home",     root_path,       :class => "#{selected(:home)}       home"
     %li= link_to "Recursos", tour_path,       :class => "#{selected(:resources)}  resources"

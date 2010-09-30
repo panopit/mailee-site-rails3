@@ -1,11 +1,10 @@
+- content_for :metatags do
+  %meta{ :name => 'Keywords', :content => 'Mailee.me, Mailee, Email, Marketing, 2.0' }
+  %meta{ :name => 'Description', :content => 'Mailee.me · Crie templates, envie mensagens e acompanhe resultados em um só lugar. Email marketing 2.0 tem criador de templates, geolocalização, integração com redes sociais, e muito mais!' }
 - content_for :signup_bar do
   = render('layouts/signup_bar')
-
-= render("site/index/showcase")
-
+= render('site/index/showcase')
 .content_wrapper
   %br
-  = render("site/index/social")
-%script{:src => '/javascripts/index.js', :type=>"text/javascript"}
-
-
+  = render('site/index/social')
+= javascript_include_tag 'index.js'

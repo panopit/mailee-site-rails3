@@ -1,40 +1,74 @@
+- content_for :metatags do
+  %meta{ :name => 'Keywords', :content => 'Mailee.me, Mailee, Email, Marketing, 2.0' }
+  %meta{ :name => 'Description', :content => 'Mailee.me · Crie templates, envie mensagens e acompanhe resultados em um só lugar. Email marketing 2.0 tem criador de templates, geolocalização, integração com redes sociais, e muito mais!' }
 .content_wrapper
   #mailee_best_practices
-    :textile
-      h1. Melhores práticas
-
-      # Não faça SPAM
-      ** Ninguém gosta de mensagens não autorizadas. Adicionar contatos que não solicitaram explicitamente receber emails seus é considerado *SPAM*. #{link_to('O que é *SPAM*', @anti_spam_path)}?
-      # Cadastro claro no seu site
-      ** Coloque de maneira clara um formulário em seu site para que os usuários se cadastrem na sua lista de contatos. Assim você pode aumentar sua lista sem se preocupar. Veja como integrar o seu site com o *Mailee.me* #{link_to('aqui', help_path)}.
-      # Defina uma política clara de descadastramento
-      ** Defina como o contato pode se descadastrar de sua lista e deixe isto bem claro nos seus envios. O *Mailee.me* disponibiliza um sistema de descadastro automático, basta que você coloque um link como no exemplo abaixo:
-      *** &lt;span&gt; &lt;a class=&quot;unsubscribe&quot; href=&quot;#&quot;&gt;Clique aqui&lt;/a&gt; se n&atilde;o quiser receber nossos emails. &lt;/span&gt;
-      *** Neste caso, o usuário irá para uma página do *Mailee.me* (sem logo) e fará o descadastro. De forma alternativa, você pode colocar um formulário em seu site. Este formulário está disponível em "Config > Integrar".
-      *** Se você quiser fazer o descadastro de outra forma (como por email), não há impedimento, mas você tem o compromisso de descadastrar o contato do *Mailee.me* em até 10 dias úteis.
-      # Trabalhe seu resultado no SPAM ASSASSIN
-      ** Veja as dicas que o *Mailee.me* te dá e modifique suas mensagens para que elas obtenham uma melhor nota no SPAM ASSASSIN. Saiba mais clicando #{link_to('aqui', help_path)}.
-      # Segmente suas Campanhas
-      ** Crie segmentos para suas listas e envie campanhas direcionadas para um público-alvo específico. Isto ajuda a obter mais resultados em suas campanhas.
-      # Personalize suas mensagens com dados do contato
-      ** Coloque dados dos contatos na sua mensagem, como nome, etc. Assim você cria uma relação mais pessoal. Saiba como fazê-lo clicando #{link_to('aqui', help_path('templates_creating.html'))}.
-      # Mantenha uma comunicação periódica
-      ** Faça envios periódicos com notícias suas, estudando a melhor freqüência de envios para o seus contatos. Não envie com muita freqüência, para evitar descadastros. Avise aos seus contatos, no momento do cadastro na lista, qual vai ser a freqüência de envios.
-      # Coloque seus dados de contato
-      ** Além de ser uma boa prática, colocar os dados de contato faz com que sua campanha fique de acordo com o CAN SPAM ACT. Coloque seu endereço e seu telefone, se possível. O *Mailee.me* facilita e automatiza este trabalho também. Veja mais #{link_to('aqui', help_path)}.
-      # Crie mensagens bonitas
-      ** A imagem de sua campanha é a imagem de sua empresa. Busque profissionais qualificados para criar seus templates e torne o email marketing uma experiência mais agradável para os seus contatos. Isto é muito importante.
-      # Escreva textos curtos e que levem o contato para o seu site
-      ** O email marketing é uma ferramenta para levar o contato ao seu site e não um fim em si. Escreva textos curtos que despertem a curiosidade do usuário para clicar nos seus links. E nada mais.
-      # Não use apenas imagens
-      ** Utilize textos com as informações que você está divulgando, além de imagens, nos seus envios. Um bom balanceamento entre imagens e textos ajuda a melhorar sua nota no SPAM ASSASSIN.
-      # Visualize a mensagem sem imagens
-      ** Veja como fica sua mensagem sem habilitar imagens no seu cliente de email e avalie quais serão os resultados de sua campanha mesmo que o contato não habilite imagens.
-      # Peça para habilitar imagens
-      ** Coloque no atributo <samp>alt=""</samp> de seus elementos <samp>&lt;img&gt;</samp> um texto como "Clique em EXIBIR IMAGENS para ver o email". Isto faz que este texto apareça para o contato quando ele ainda não habilitou imagens. Ao habilitar as imagens, o usuário permite que o *Mailee.me* saiba que ele acessou o email e gere estatísticas de acesso.
-      # Ordene as notícias/produtos
-      ** Monte seu email de maneira que os itens mais importantes fiquem acima, pois estes são os itens com mais visibilidade e com mais chances de receberem cliques.
-      # Peça para adicionar seu email na lista de contatos do cliente de emails
-      ** Solicite que o seu email seja cadastrado na lista de contatos do seu contato. Isto garante que suas mensagens entrem na caixa de entrada e melhora a sua reputação para envios. O *Mailee.me* facilita isto dando instruções precisas para a maioria dos clientes de email. Saiba mais clicando #{link_to('aqui', help_path('templates_creating.html'))}.
-
-      Se ainda possui alguma dúvida, #{link_to('entre em contato',support_mail)}.
+    %h1 Melhores práticas
+    %h2 Não faça SPAM
+    %p Ninguém gosta de mensagens não autorizadas. Adicionar contatos que não solicitaram explicitamente receber emails seus é considerado SPAM.
+    %p #{link_to('O que é SPAM?', @anti_spam_path)}
+    %hr
+    %h2 Cadastro claro no seu site
+    %p Coloque de maneira clara um formulário em seu site para que os usuários se cadastrem na sua lista de contatos. Assim você pode aumentar sua lista sem se preocupar. Veja como integrar o seu site com o Mailee.me #{link_to('aqui', help_path)}.
+    %hr
+    %h2 Defina uma política clara de descadastramento
+    %p Defina como o contato pode se descadastrar de sua lista e deixe isto bem claro nos seus envios.
+    %p O Mailee.me disponibiliza um sistema de descadastro automático, basta que você coloque um link como no exemplo abaixo:
+    %p
+      %pre
+        %code
+          :escaped
+            <p><a class="unsubscribe" href="#">Clique aqui</a> se não quiser receber nossos emails.</p>
+    %p Neste caso, o usuário irá para uma página do Mailee.me (sem logo) e fará o descadastro. De forma alternativa, você pode colocar um formulário em seu site. Este formulário está disponível em "Configurações > Integrar > Descadastro". Para saber mais, leia o artigo #{link_to 'integração através de formulário', help_path('integration_form.html#gerandocdigoparadescadastro')}.
+    -#
+      #REVISAR não aceitaremos esse tipo de descadastro.
+      %p Se você quiser fazer o descadastro de outra forma (como por email), não há impedimento, mas você tem o compromisso de descadastrar o contato do Mailee.me em até 10 dias úteis.
+    -#
+      #REVISAR
+      %hr
+      %h2 Trabalhe seu resultado no SPAM ASSASSIN
+      %p Veja as dicas que o Mailee.me te dá e modifique suas mensagens para que elas obtenham uma melhor nota no SPAM ASSASSIN. Saiba mais clicando #{link_to('aqui', help_path)}.
+    %hr
+    %h2 Segmente suas Campanhas
+    %p Crie segmentos para suas listas e envie campanhas direcionadas para um público-alvo específico. Isto ajuda a obter mais resultados em suas campanhas.
+    %hr
+    %h2 Personalize suas mensagens com dados do contato
+    %p Coloque dados dos contatos na sua mensagem, como nome, etc. Assim você cria uma relação mais pessoal. Saiba como fazê-lo clicando #{link_to('aqui', help_path('templates_creating.html#personalizaodemensagensno-maileeme'))}.
+    %hr
+    %h2 Mantenha uma comunicação periódica
+    %p Faça envios periódicos com notícias suas, estudando a melhor freqüência de envios para o seus contatos. Não envie com muita freqüência, para evitar descadastros. Avise aos seus contatos, no momento do cadastro na lista, qual vai ser a freqüência de envios.
+    %hr
+    %h2 Coloque seus dados de contato
+    %p Além de ser uma boa prática, colocar os dados de contato faz com que sua campanha fique de acordo com o CAN SPAM ACT. Coloque seu endereço e seu telefone, se possível. O Mailee.me facilita e automatiza este trabalho também. Veja mais #{link_to('aqui', help_path('templates_creating.html#adicionandolistadecontatoswhitelist'))}.
+    %hr
+    %h2 Crie mensagens bonitas
+    %p A imagem de sua campanha é a imagem de sua empresa. Busque profissionais qualificados para criar seus templates e torne o email marketing uma experiência mais agradável para os seus contatos. Isto é muito importante.
+    %hr
+    %h2 Escreva textos curtos e que levem o contato para o seu site
+    %p O email marketing é uma ferramenta para levar o contato ao seu site e não um fim em si. Escreva textos curtos que despertem a curiosidade do usuário para clicar nos seus links. E nada mais.
+    %hr
+    %h2 Não use apenas imagens
+    %p Utilize textos com as informações que você está divulgando, além de imagens, nos seus envios.
+    -#
+      #REVISAR Diz onde?
+      %p Um bom balanceamento entre imagens e textos ajuda a melhorar sua nota no SPAM ASSASSIN.
+    %hr
+    %h2 Visualize a mensagem sem imagens
+    %p Veja como fica sua mensagem sem habilitar imagens no seu cliente de email e avalie quais serão os resultados de sua campanha mesmo que o contato não habilite imagens.
+    %hr
+    %h2 Peça para habilitar imagens
+    %p Configure em suas imagens (elemento <samp>&lt;img&gt;</samp>) o atributo <samp>alt=""</samp> da seguinte forma:
+    %p
+      %pre
+        %code
+          :escaped
+            <img src="" alt="Habilite as imagens para visualizar corretamente essa mensagem"/>
+    %p Isto faz que este texto apareça para o contato quando ele ainda não habilitou imagens. Ao habilitar as imagens, o usuário permite que o Mailee.me saiba que ele acessou o email e gere estatísticas de acesso.
+    %hr
+    %h2 Ordene sua mensagem
+    %p Monte seu email de maneira que os itens mais importantes fiquem acima, pois estes são os itens com mais visibilidade e com mais chances de receberem cliques.
+    %hr
+    %h2 Peça para adicionar seu email na lista de contatos do cliente de emails
+    %p Solicite que o seu email seja cadastrado na lista de contatos do seu contato. Isto garante que suas mensagens entrem na caixa de entrada e melhora a sua reputação para envios. O Mailee.me facilita isto dando instruções precisas para a maioria dos clientes de email. Saiba mais clicando #{link_to('aqui', help_path('templates_creating.html'))}.
+    %hr
+    %p Se ainda possui alguma dúvida, #{link_to('entre em contato',support_mail)}.

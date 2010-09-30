@@ -1,39 +1,42 @@
-!!! Strict
-%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "pt-BR" , "xml:lang" => "pt-BR"}
+!!!5
+%html{ :lang => 'pt-br'}
   %head
-    %meta{ "http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
-    %title= @title
-    = stylesheet_link_tag 'screen', :charset => "utf-8", :media => 'screen, projection'
+    %meta{ :charset => 'UTF-8' }
     /[if IE]
-      = stylesheet_link_tag 'ie', :charset => "utf-8", :media => 'screen, projection'
-    %link{ :rel   => "home",          :href      => "http://www.mailee.me/" }
-    %link{ :rel   => "alternate",     :href      => "http://blog.mailee.me/rss.xml", :type => "application/rss+xml", :title => "RSS" }
-    %link{ :rel   => "index",         :href      => "http://www.mailee.me/sitemap" }
-    %meta{ :name  => "Author",        :content   => "Softa" }
-    = @metatags
-    %meta{ :name => "google-site-verification", :content => "xPX2YKk66CJWtqIoNfnFdDgXJr2Imf8dB0EgipGb2I0" }
-    %link{ :href => "http://fonts.googleapis.com/css?family=Droid+Sans:bold", :rel => "stylesheet", :type => "text/css" }
+      %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge;chrome=1' }
+    %meta{ :name => 'robots', :content => 'index, follow' }
+    %title= @title
+    = stylesheet_link_tag 'screen'
+    /[if IE]
+      = stylesheet_link_tag 'ie'
+    %link{ :rel   => 'home',          :href      => 'http://mailee.me/' }
+    %link{ :rel   => 'alternate',     :href      => 'http://blog.mailee.me/rss.xml', :type => 'application/rss+xml', :title => 'RSS' }
+    %link{ :rel   => 'index',         :href      => 'http://mailee.me/sitemap' }
+    %meta{ :name  => 'Author',        :content   => 'Softa' }
+    %link{ :rel   => 'canonical',     :href      => 'http://mailee.me/' }
+    = yield :metatags
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Sans:bold'
     = javascript_include_tag 'jquery-1.4.2.min'
+    = javascript_include_tag 'jquery.cookie'
+    = javascript_include_tag 'referrer'
     /[if IE]
       = javascript_include_tag 'ie6/jquery.reject.min'
-      :javascript 
+      :javascript
         $(document).ready(function(){
           $.reject({
-            display: ['chrome', 'firefox','safari','msie','gcf'],
-            header: 'Seu navegador está desatualizado',
-            paragraph1: 'O navegador que você está utilizando não é suportado pelo Mailee.me',
-            paragraph2: 'Instale um dos navegadores abaixo para continuar.',
+            display:     ['chrome', 'firefox','safari','msie','gcf'],
+            header:       'Seu navegador está desatualizado',
+            paragraph1:   'O navegador que você está utilizando não é suportado pelo Mailee.me',
+            paragraph2:   'Instale um dos navegadores abaixo para continuar.',
             closeMessage: 'Ao fechar essa janela você entende que sua experiência nesse site não será a melhor possível.',
-            closeLink: 'Fechar essa notificação.',
-            imagePath: '../../images/browsers/',
-            closeCookie: true
+            closeLink:    'Fechar essa notificação.',
+            imagePath:    '../../images/browsers/',
+            closeCookie:  true
           });
           return false;
         });
-    = javascript_include_tag 'tweet/jquery.tweet'
-    = javascript_include_tag 'zrssfeed/jquery.zrssfeed.min'
-    = javascript_include_tag 'zrssfeed/jquery.zrssfeed.min'
-    :javascript 
+    = javascript_include_tag 'tweet/jquery.tweet', 'zrssfeed/jquery.zrssfeed.min'
+    :javascript
       $(document).ready(function(){
         $(".mailee_tweets").tweet({
           username: "maileeme",
@@ -55,7 +58,7 @@
           errormsg: 'Ooops. Ocorreu um erro ao carregar o Feed.'
         });
       });
-    %link{ :rel => 'shortcut icon', :href => 'favicon.ico' }
+    %link{ :rel => 'shortcut icon', :href => 'favicon.ico', :type => 'image/vnd.microsoft.icon' }
   %body{:id => body_id}
     #root
       #header= render('layouts/header')

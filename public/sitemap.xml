@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>http://www.mailee.me/</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://www.mailee.me/cadastro.html</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://www.mailee.me/recursos.html</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://www.mailee.me/index.html</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://www.mailee.me/melhores_praticas.html</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://www.mailee.me/politica_anti_spam.html</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://www.mailee.me/termos_de_uso.html</loc>
+    <lastmod>2010-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

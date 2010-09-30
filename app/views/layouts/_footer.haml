@@ -37,12 +37,11 @@
           %br
           %input#email.title{ :name => "email", :type => "text", :tabindex => 7}
           %br
-          %button{ :type => "submit"}
-            #subscribe_newsletter_button
-              %span Cadastrar
+          %button#subscribe_newsletter_button{ :type => "submit"}
+            %span Cadastrar
           %p.quiet &asymp; 1 email por mês
           .clear
-      :javascript 
+      :javascript
         document.getElementById('mailee-form').onsubmit = function(){
           re = /^[a-z0-9\._-]+@([a-z0-9][a-z0-9-_]*[a-z0-9-_]\.)+([a-z-_]+\.)?([a-z-_]+)$/
           if(!this.email.value.match(re)) {
@@ -54,6 +53,6 @@
         }
   .clear
   #colophon
-    #{link_to "", 'http://www.softa.com.br/', :id => "softa_logo", :title => "Softa"}
+    #{link_to '', 'http://softa.com.br/', :id => "softa_logo", :title => "Softa"}
     %p.copyright_info Copyright &copy; 2010
     .clear
