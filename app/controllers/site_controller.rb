@@ -51,6 +51,17 @@ class SiteController < ApplicationController
     # %input{ :name => "list[]", :type => "hidden", :value => "22642" }
   end
   
+  def contact
+    # Sends the email via ajax.
+    def contact
+      Site.contact(params).deliver
+      render :json => {:ok => true}.to_json
+    rescue 
+      render :json => {:ok => false}.to_json
+    end
+
+  end
+  
 protected
 
   before_filter :set_defaults
