@@ -1,20 +1,9 @@
-@import "blueprint"
-@import "blueprint/reset"
+@import "blueprint",  "blueprint/reset"
 +blueprint-typography
-@import "partials/blueprint_overwrite.sass"
-@import "partials/utilities/utilities.sass"
-@import "partials/shared/header.sass"
-@import "partials/home/showcase.sass"
-@import "partials/home/social.sass"
-@import "partials/shared/footer.sass"
-@import "partials/resources/resources.sass"
-@import "partials/prices/prices.sass"
-@import "partials/videos/videos.sass"
-@import "partials/bad_browsers.sass"
+@import "partials/blueprint_overwrite.sass", "partials/utilities/utilities.sass",  "partials/shared/header.sass", "partials/home/showcase.sass", "partials/home/social.sass", "partials/shared/footer.sass",  "partials/resources/resources.sass", "partials/prices/prices.sass", "partials/videos/videos.sass", "partials/bad_browsers.sass"
 $page_bg: #000
-body#home
-  #content
-    padding-top: 0px !important
+body#index #content
+  padding-top: 0px !important
 body
   +blueprint
   background: $page_bg url("/images/footer_background.gif") repeat scroll top left
@@ -116,7 +105,6 @@ body
   p
     font-size: 15px
     line-height: 21px
-    max-width: 75%
   ul
     max-width: 75%
     list-style: inside square

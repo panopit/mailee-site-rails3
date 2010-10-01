@@ -9,7 +9,7 @@ module SiteHelper
   end
   def selected(current);    selected_menu.to_s == current.to_s ? 'current_view' : '';             end
   def signup_iframe_path;   "http://signup.#{env_path}/signup/new?referrer=#{params[:referrer]}"; end
-  def global_login;         "http://assets.#{env_path}/login";                                    end
+  def global_login;         "http://signup.#{env_path}/login";                                    end
   def blog_path;            'http://blog.mailee.me';                                              end
   def twitter_path;         'http://twitter.com/maileeme';                                        end
   def support_mail;         'mailto:suporte@mailee.me';                                           end

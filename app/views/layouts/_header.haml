@@ -11,20 +11,36 @@
     %li= link_to t('header.nav.signup'), signup_path, :class => "#{selected(:signup)} signup"
     %li= link_to 'Help', help_path, :class => "#{selected(:help)} help"
     - if @online
-      %li.chat_online= link_to 'Chat', 'http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14', :target => :_blank
+      %li.chat_online
+        %span.bull •
+        = link_to 'Chat', '#'
     - else
-      %li.chat_offline= mail_to 'suporte@mailee.me', 'Chat'
+      %li.chat_offline= mail_to 'suporte@mailee.me', 'Chat', :title => 'Chat offline. Envie um email mara suporte@mailee.me'
   .clear
 .clear
-.page_overlay.hide
+.page_overlay.login_form.hide
   #login_form_box
-    .close_login_panel{:style => 'z-index: 900; top: 50%; left: 50%; position:fixed; width:24px; height:24px; margin: -212px 0 0 190px;'}
+    .close_login_panel{:style => 'margin: -202px 0 0 252px;'}
       #{image_tag('close.png')}
-    %iframe{ :src => global_login, :width => "500px", :height => "300px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
+    %iframe{ :src => global_login, :width => "500px", :height => "350px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
+.page_overlay.chat_box.hide
+  #chat_box
+    .close_login_panel{:style => 'margin: -276px 0 0 402px;'}
+      #{image_tag('close.png')}
+    %iframe{ :src => 'http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14', :width => "800px", :height => "500px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
 :javascript 
   $('#login_button').click(function(){
-    $('.page_overlay').fadeIn('slow')
+    $('.page_overlay.login_form').fadeIn('slow')
+    return false
+  })
+  $('.chat_online a').click(function(){
+    $('.page_overlay.chat_box').fadeIn('slow')
+    return false
   })
   $('.close_login_panel').click(function(){
     $('.page_overlay').fadeOut('fast')
+    return false
   })
+  forward = function(){ $('.chat_online .bull').animate({color: '#8CC63F'}, 'slow', rewind) }
+  rewind = function(){ $('.chat_online .bull').animate({color: '#5C960F'}, 'slow', forward) }
+  forward()
