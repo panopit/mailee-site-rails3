@@ -7,19 +7,13 @@ module SiteHelper
       when    'production' : 'mailee.me'
     end
   end
-
-  def selected(current)
-    selected_menu.to_s == current.to_s ? 'current_view' : ''
-  end
-
-  def signup_iframe_path; "http://signup.#{env_path}/signup/new?referrer=#{params[:referrer]}"; end
-  def blog_path;          'http://blog.mailee.me';                end
-  def twitter_path;       'http://twitter.com/maileeme';          end
-  def support_mail;       'mailto:suporte@mailee.me';             end
-  def commercial_mail;    'mailto:comercial@mailee.me';           end
-
-  def help_path(page=nil)
-    "http://help.mailee.me/#{page}"
-  end
+  def selected(current);    selected_menu.to_s == current.to_s ? 'current_view' : '';             end
+  def signup_iframe_path;   "http://signup.#{env_path}/signup/new?referrer=#{params[:referrer]}"; end
+  def global_login;         "http://assets.#{env_path}/login";                                    end
+  def blog_path;            'http://blog.mailee.me';                                              end
+  def twitter_path;         'http://twitter.com/maileeme';                                        end
+  def support_mail;         'mailto:suporte@mailee.me';                                           end
+  def commercial_mail;      'mailto:comercial@mailee.me';                                         end
+  def help_path(page=nil);  "http://help.mailee.me/#{page}";                                      end
 
 end
