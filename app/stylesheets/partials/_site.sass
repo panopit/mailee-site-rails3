@@ -4,6 +4,8 @@
 $page_bg: #000
 body#index #content
   padding-top: 0px !important
+footer, header
+  display: block
 body
   +blueprint
   background: $page_bg url("/images/footer_background.gif") repeat scroll top left
@@ -47,7 +49,7 @@ body
     padding: .5em
   #root
     height: 100%
-    #header
+    header
       .header_wrapper
         +container
         #logo
@@ -91,13 +93,15 @@ body
                 color: $green
               &:active
                 color: $green - #222
-    #footer
+    footer
       background: transparent none
       border-top: 1px solid #777
       .footer_wrapper
         +container
     .signup_wrapper
       +container
+.colophon_wrapper
+  +container
 #mailee_terms_of_use, #mailee_privacy_policy, #mailee_anti_spam_policy, #mailee_best_practices
   h2
     margin-top: 2em

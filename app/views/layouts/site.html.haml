@@ -13,9 +13,10 @@
     %meta{ :name  => 'Author',        :content   => 'Softa' }
     %link{ :rel   => 'canonical',     :href      => 'http://mailee.me/' }
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Sans:bold'
-    = javascript_include_tag 'jquery-1.4.2.min', 'jquery.cookie', 'referrer', 'jquery.animate-colors-min.js'
+    = javascript_include_tag 'jquery-1.4.2.min', 'jquery.cookie', 'referrer', 'jquery.animate-colors-min.js', 'http://html5shim.googlecode.com/svn/trunk/html5.js'
     /[if IE]
       = stylesheet_link_tag 'ie'
+      = javascript_include_tag 'selectivizr/selectivizr'
       = javascript_include_tag 'ie6/jquery.reject.min'
       :javascript
         $(document).ready(function(){
@@ -35,8 +36,8 @@
     %link{ :rel => 'shortcut icon', :href => 'favicon.ico', :type => 'image/vnd.microsoft.icon' }
   %body{:id => selected_menu}
     #root
-      #header= render('layouts/header')
+      %header= render('layouts/header')
       #content= yield
       = yield :signup_bar
-      #footer= render('layouts/footer')
+      %footer= render('layouts/footer')
     = render('layouts/google_analytics')

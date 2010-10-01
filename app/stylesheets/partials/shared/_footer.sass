@@ -1,59 +1,60 @@
 @import "partials/utilities/utilities.sass"
-#footer
-  color: white
-  .footer_wrapper
-    padding: 40px 0 0 0
-  hr
-    border: 0 none
-    border-top: 1px solid #000
-    border-bottom: 1px solid #333
-    margin: 1em 0
-  .web_links
-    img
-      vertical-align: middle
-    a
-      color: $blue_light
-      text-decoration: none
-      &:hover
-        text-decoration: none
-        color: $blue_light + #222
-      &:active
-        color: $blue
-        position: relative
-        top: 1px
-  h3
-    margin: 0 0 .5em 0
-    padding: 0
-    color: #708090
-    font:
-      weight: bolder
-      style: normal
-      size: 14px
-    text:
-      transform: lowercase
-      shadow: #000 0 0 2px
-  ul
-    padding: 0
-    margin: 0
-    li
-      list-style: square inside url("/images/footer_bullet_normal.gif")
-      margin: 0
-      padding: .25em 0
-      opacity: .6
+#root
+  footer
+    color: white
+    .footer_wrapper
+      padding: 40px 0 0 0
+    hr
+      border: 0 none
+      border-top: 1px solid #000
+      border-bottom: 1px solid #333
+      margin: 1em 0
+    .web_links
+      img
+        vertical-align: middle
       a
-        font-size: 13px
-        color: #999
-        padding: .25em 0 .25em 0
-        text:
-          decoration: none
-          shadow: #000 0 -1px 0
-        &:hover
-          color: #fff
+        color: $blue_light
+        text-decoration: none
+        &:hover, &:focus
           text-decoration: none
-      &:hover
-        opacity: 1
+          color: $blue_light + #222
+        &:active
+          color: $blue
+          position: relative
+          top: 1px
+    h3
+      margin: 0 0 .5em 0
+      padding: 0
+      color: #708090
+      font:
+        weight: bolder
+        style: normal
+        size: 14px
+      text:
+        transform: lowercase
+        shadow: #000 0 0 2px
+    ul
+      padding: 0
+      margin: 0
+      li
+        list-style: square inside url("/images/footer_bullet_normal.gif")
+        margin: 0
+        padding: .25em 0
+        opacity: .6
         a
-          color: #fff
+          font-size: 13px
+          color: #999
+          padding: .25em 0 .25em 0
+          text:
+            decoration: none
+            shadow: #000 0 -1px 0
+          &:hover, &:focus
+            color: #fff
+            text-decoration: none
+        &:hover, &:focus
+          opacity: 1
+          a
+            color: #fff
   form
     label
       color: white
@@ -90,6 +91,7 @@
       display: block
       &:hover #subscribe_newsletter_button
         +position(0,-72px)
+        color: red
       &:active #subscribe_newsletter_button
         +position(0,-24px)
       &#subscribe_newsletter_button
@@ -101,7 +103,7 @@
         width: 86px
         padding: 5px 0
         text-align: center
-        &:hover
+        &:hover, &:focus
           +position(0,-72px)
         &:active
           +position(0,-24px)
@@ -110,29 +112,35 @@
           font-size: 13px !important
           color: white !important
           text-shadow: $blue_darker 0 -1px 0 !important
-  #colophon
-    padding: 1em 0
-    margin-top: -84px
-    a#softa_logo
-      +sprite("/images/softa_logo.png")
-      display: block
-      float: left
-      height: 50px
-      width: 110px
-      margin-right: 1em
+#mailee_ok h4
+  color: $green
+#mailee_error
+  color: $red
+.colophon_wrapper
+  +container
+#colophon
+  padding: 1em 0
+  margin-top: -84px
+  a#softa_logo
+    +sprite("/images/softa_logo.png")
+    display: block
+    float: left
+    height: 50px
+    width: 110px
+    margin-right: 1em
+    &:hover
+      +position(0,-50px)
+  p.copyright_info
+    float: left
+    padding: 1.75em 0
+    color: #888
+    a
+      color: $blue_light
+      text-decoration: none
       &:hover
-        +position(0,-50px)
-    p.copyright_info
-      float: left
-      padding: 1.75em 0
-      color: #888
-      a
-        color: $blue_light
         text-decoration: none
-        &:hover
-          text-decoration: none
-          color: $blue_light + #222
-        &:active
-          color: $blue
-          position: relative
-          top: 1px
+        color: $blue_light + #222
+      &:active
+        color: $blue
+        position: relative
+        top: 1px

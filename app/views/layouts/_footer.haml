@@ -21,22 +21,27 @@
       &nbsp;&nbsp;&nbsp;
       = link_to((image_tag('social/twitter_16.png') + ' Twitter'), twitter_path)
   .span-6.last
-    #newsletter
+    #newsletter{:style => 'height:200px;' }
       %h3 Receba nossa newsletter
-      #mailee_ok.hide OK!
-      #mailee_error.hide ERROR!
-      %form#mailee_form{ :action=>"/mailee", :method => "post" }
+      #mailee_ok.hide
+        %h4 Email cadastrado com sucesso.
+        %p Você receberá uma confirmação por email.
+        = link_to 'Cadastrar novo email.', '#', :class => 'subscribe_another_email'
+      #mailee_error.hide
+        %h4 Ocorreu um erro ao cadastrar o email
+        = link_to 'Tentar novamente', '#', :class => 'subscribe_another_email'
+      %form#mailee_form{ :action => '/mailee', :method => 'post' }
         = token_tag
         %fieldset
-          %label{ :for => "name" } Nome
+          %label{ :for => 'name' } Nome
           %br
-          %input#name.title{ :name => "name", :type => "text", :tabindex => 6 }
+          %input#name.title{ :name => 'name', :type => 'text', :tabindex => 6}
           %br
-          %label{:for => "email" } Email
+          %label{:for => 'email' } Email
           %br
-          %input#email.title{ :name => "email", :type => "text", :tabindex => 7}
+          %input#email.title{ :name => 'email', :type => 'text', :tabindex => 7}
           %br
-          %button#subscribe_newsletter_button{ :type => "submit"}
+          %button#subscribe_newsletter_button{ :type => 'submit', :tabindex => 8}
             %span Cadastrar
           %p.quiet &asymp; 1 email por mês
           .clear
@@ -50,18 +55,24 @@
           }
           var data = $(this).serialize()
           var url = $(this).attr('action')
-          $.post(url, data, function(result){ 
+          $.post(url, data, function(result){
             $('#mailee_form').fadeOut()
             if(result.ok){
               $('#mailee_ok').fadeIn()
             }else{
-              $('#mailee_error').fadeIn()            
+              $('#mailee_error').fadeIn()
             }
           }, 'json')
           return false
         })
+        $('.subscribe_another_email').click(function(){
+          $('#mailee_ok').hide()
+          $('#mailee_form').fadeIn()
+          return false
+        })
   .clear
+.colophon_wrapper{:style => 'overflow:visible;'}
   #colophon
-    #{link_to '', 'http://softa.com.br/', :id => "softa_logo", :title => "Softa"}
+    #{link_to '', 'http://softa.com.br/', :id => 'softa_logo', :title => 'Softa'}
     %p.copyright_info Copyright &copy; 2010
     .clear
