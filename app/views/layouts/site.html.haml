@@ -33,7 +33,7 @@
         });
     = yield :metatags
     %link{ :rel => 'shortcut icon', :href => 'favicon.ico', :type => 'image/vnd.microsoft.icon' }
-  %body{:id => body_id}
+  %body{:id => selected_menu}
     #root
       #header= render('layouts/header')
       #content= yield
