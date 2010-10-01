@@ -10,7 +10,10 @@
     %li= link_to t('header.nav.prices'),   prices_path,     :class => "#{selected(:prices)} prices"
     %li= link_to t('header.nav.signup'),   signup_path,     :class => "#{selected(:signup)} signup"
     %li= link_to 'Help',                          help_path,       :class => "#{selected(:help)} help"
-    %li= link_to "Chat",     "http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14", :target => :_blank
+    - if @online
+      %li= link_to "Chat",     "http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14", :target => :_blank
+    - else
+      %li= mail_to "suporte@mailee.me", "Chat"
   .clear
 .clear
 .page_overlay.hide{:style => 'position:fixed; width: 100%; height: 100%; background:rgba(0,0,0,.88); z-index: 1510; top:0; left:0; z-index:700;'}
