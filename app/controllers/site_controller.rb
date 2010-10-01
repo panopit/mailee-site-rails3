@@ -45,10 +45,6 @@ class SiteController < ApplicationController
     data = {:name => params[:name], :email => params[:email], :key => "f9b5d3", "list[]" => 22642, :url_ok => ok, :url_error => error}
     res = Net::HTTP.post_form(URI.parse(url), data)
     render :json => {:ok => res['location'] == ok}
-    # %input{ :name => "key", :type => "hidden", :value =>  }
-    # %input{ :name => "url_ok", :type => "hidden", :value => form_ok_url }
-    # %input{ :name => "url_error", :type => "hidden", :value => form_error_url }
-    # %input{ :name => "list[]", :type => "hidden", :value => "22642" }
   end
   
   # Sends the email via ajax.
@@ -77,9 +73,5 @@ protected
   def selected_menu
     @selected_menu ||= action_name
   end
-
-  #def body_id
-  #  @body_id ||= selected_menu
-  #end
 
 end
