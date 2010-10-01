@@ -37,6 +37,7 @@ GEM
     daemons (1.0.10)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    eventmachine (0.12.10)
     gem_plugin (0.2.3)
     haml (3.0.21)
     happymapper (0.3.2)
@@ -52,6 +53,8 @@ GEM
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
     nokogiri (1.4.3.1)
+    percy (1.4.2)
+      eventmachine (>= 0.12.10)
     pg (0.9.0)
     pivotal-tracker (0.2.2)
       builder
@@ -93,6 +96,7 @@ DEPENDENCIES
   compass (>= 0.10.3)
   haml
   mongrel (= 1.2.0.pre2)
+  percy
   pg
   pivotal-tracker
   rails (= 3.0.0)
