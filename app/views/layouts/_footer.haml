@@ -6,16 +6,16 @@
       %li= link_to t('footer.privacy_policy'), privacy_path
       %li= link_to t('footer.terms_of_use'), terms_path
   .span-5.append-1
-    %h3 Contato
-    %ul
-      %li= link_to 'Suporte', support_mail
-      %li= link_to 'Comercial', commercial_mail
-  .span-5.append-1
     %h3 Documentação
     %ul
       %li= link_to 'Help', help_path
       %li= link_to 'Melhores práticas', best_practices_path
-    %hr
+  .span-5.append-1
+    .contact
+      %h3 emails para contato
+      %ul.contact_list
+        %li= link_to 'Suporte', support_mail
+        %li= link_to 'Comercial', commercial_mail
     .web_links
       = link_to((image_tag('social/rss_16.png') + ' Blog'), blog_path)
       &nbsp;&nbsp;&nbsp;
