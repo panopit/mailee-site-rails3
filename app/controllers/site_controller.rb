@@ -38,6 +38,19 @@ class SiteController < ApplicationController
     title "Principais recursos"
   end
 
+  def mailee
+    ok = 'http://www.google.com'
+    error = 'http://www.yahoo.com'
+    url = "http://mailee.mailee.me/go/add_contact_form"
+    data = {:name => params[:name], :email => params[:email], :key => "f9b5d3", "list[]" => 22642, :url_ok => ok, :url_error => error}
+    res = Net::HTTP.post_form(URI.parse(url), data)
+    render :json => {:ok => res['location'] == ok}
+    # %input{ :name => "key", :type => "hidden", :value =>  }
+    # %input{ :name => "url_ok", :type => "hidden", :value => form_ok_url }
+    # %input{ :name => "url_error", :type => "hidden", :value => form_error_url }
+    # %input{ :name => "list[]", :type => "hidden", :value => "22642" }
+  end
+  
 protected
 
   before_filter :set_defaults

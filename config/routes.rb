@@ -13,6 +13,7 @@ MaileeSiteRails3::Application.routes.draw do
 =end
 
   # Site paths
+  post "mailee", :controller => :site, :action => :mailee
   get "trabalhando", :controller => :working_on, :action => :index
   get "politica_anti_spam(.html)", :controller => :site, :action => :spam, :as => :spam
   get "cadastro(.html)", :controller => :site, :action => :signup, :as => :signup
