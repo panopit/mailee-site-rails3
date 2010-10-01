@@ -44,7 +44,7 @@ protected
 
   def set_defaults
     title "Email marketing com criador de templates, geolocalização e integração com redes sociais"
-    @online = File.read('online.txt') == 'true'
+    @online = File.read('online.txt') == 'true' rescue false
   end
 
   def title(title)
