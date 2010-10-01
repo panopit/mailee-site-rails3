@@ -3,4 +3,5 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 config/pivotal_tracker.yml
+config/irc.yml
 public/stylesheets/*.css

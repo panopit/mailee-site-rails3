@@ -1,0 +1,5 @@
+nick: NICK
+username: USERNAME
+server: irc.freenode.net
+password: PASSWORD
+port: 6667
