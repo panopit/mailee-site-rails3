@@ -1,16 +1,27 @@
 .header_wrapper
   #login_signup_box
-    #{link_to 'Login', '#', :id=> :login_button, :title => 'Login'}
-    #{link_to 'Experimente de graça', signup_path, :id => :signup_button, :title => 'Experimente de graça'}
+    #{link_to 'Login', '#', :id => :login_button, :title => 'Login'}
+    #{link_to t('header.try_for_free'), signup_path, :id => :signup_button, :title => t('header.try_for_free')}
     .clear
   #logo= link_to image_tag('mailee_logo.png', :alt => 'Mailee.me', :title => 'Mailee.me · Email Marketing 2.0'), root_path
   %ul#navigation
-    %li= link_to "Home",     root_path,       :class => "#{selected(:home)}       home"
-    %li= link_to "Recursos", tour_path,       :class => "#{selected(:resources)}  resources"
-    %li= link_to "Preços",   prices_path,     :class => "#{selected(:prices)}     prices"
-    %li= link_to "Cadastro", signup_path,     :class => "#{selected(:signup)}     signup"
-    %li= link_to "Help",     help_path,       :class => "#{selected(:help)}       help"
+    %li= link_to 'Home',                          root_path,       :class => "#{selected(:index)} home"
+    %li= link_to t('header.nav.tour'),     tour_path,       :class => "#{selected(:tour)} resources"
+    %li= link_to t('header.nav.prices'),   prices_path,     :class => "#{selected(:prices)} prices"
+    %li= link_to t('header.nav.signup'),   signup_path,     :class => "#{selected(:signup)} signup"
+    %li= link_to 'Help',                          help_path,       :class => "#{selected(:help)} help"
     %li= link_to "Chat",     "http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14", :target => :_blank
-    
   .clear
 .clear
+.page_overlay.hide{:style => 'position:fixed; width: 100%; height: 100%; background:rgba(0,0,0,.88); z-index: 1510; top:0; left:0; z-index:700;'}
+  #login_form_box{:style => 'position: fixed; width: 500px; height: 300px; background: white; margin: -200px 0 0 -300px; top: 50%; left: 50%; z-index: 800; border-radius:15px; -webkit-background-clip:border-box; -webkit-box-shadow: #fff 0 0 50px;'}
+    .close_login_panel{:style => 'z-index: 900; top: 50%; left: 50%; position:fixed; width:24px; height:24px; margin: -212px 0 0 190px;'}
+      #{image_tag('close.png')}
+    %iframe{ :src => "http://softa.mailee.me/login", :width => "500px", :height => "300px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
+:javascript 
+  $('#login_button').click(function(){
+    $('.page_overlay').fadeIn('slow')
+  })
+  $('.close_login_panel').click(function(){
+    $('.page_overlay').fadeOut('fast')
+  })
