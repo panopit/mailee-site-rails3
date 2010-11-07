@@ -1,0 +1,69 @@
+%style #showcase a{ color:#cdf }
+#showcase
+  .light
+    .showcase_wrapper
+      .showcase
+        .description.span-12.last
+          %h1.slideme Email as a Service
+          %p.slideme
+            O jeito certo de enviar
+            emails da sua aplicação.
+          %p.slideme
+            Utilize o Mailee.me para enviar
+            %br
+            suas mensagens e saiba quem, quando
+            %br
+            e como suas mensagens estão sendo vistas.
+          %h2.slideme
+            %a.signup_now{ :href => signup_path } Experimente grátis &raquo;
+        .slideme.span-12
+          = image_tag 'mailee_eaas.png'
+      .showcase{:style => 'display:none'}
+        .span-11
+          .showcase_image
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/why_use.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/why_use_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+        .span-12.prepend-1.last
+          %ol{:style => 'font-size:2em'}
+            %li.slideme Você cria uma conta no Mailee
+            %li.slideme Sua aplicação utiliza a API para enviar emails
+            %li.slideme Você sabe exatamente quem acessou as mensagens...
+            %li.slideme ... e nunca mais se preocupa com a entrega.
+      .showcase{:style => 'display:none'}
+        .span-11.append-1
+          %ul{:style => 'font-size:1.6em'}
+            %li.slideme Você não se preocupa mais com entregabilidade
+            %li.slideme Você sabe como, onde, quando e quem acessou seus emails
+            %li.slideme Você pode enviar emails para datas futuras
+            %li.slideme Você pode enviar emails para milhares de contatos, com uma ação só
+            %li.slideme Seus templates são respeitados e você pode mudá-los de forma fácil
+        .span-12.last
+          .showcase_image
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/designers.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/design_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+      .showcase{ :style => 'display:none'}
+        .span-12.last
+          .showcase_image.slideme
+            %div{:style => 'position:relative;'}
+              = image_tag 'showcase/developers.gif', :class => 'slideme'
+              %div{:style => 'position:absolute; bottom:0; left:0; margin:-15px;'}
+                - %w(one two three).each do |i|
+                  = image_tag "showcase/developers_block_#{i}.gif", :class => 'slideme image_shadow', :style => i == 'three' ? '' : 'margin-right:52px;'
+        .span-11.prepend-1
+          %ul{:style => 'font-size:2em'}
+            %li.slideme #{link_to 'GEM', 'https://github.com/softa/mailee-api'} para integração com Ruby on Rails
+            %li.slideme Código para integração com #{link_to 'PHP', 'https://github.com/softa/mailee-api'}
+            %li.slideme Integração com loja virtual #{link_to 'SPREE', 'https://github.com/softa/mailee_spree'} (Locaweb)
+            %li.slideme Integração com CMS Drupal (em breve)
+.showcase_selector
+  .container
+    %a.tab.on{ :href => "#" } EaaS
+    %a.tab{ :href => "#" } como funciona?
+    %a.tab{ :href => "#" } vantagens
+    %a.tab{ :href => "#" } ferramentas

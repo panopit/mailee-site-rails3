@@ -4,6 +4,12 @@ class SiteController < ApplicationController
   def index
   end
 
+  def apps
+  end
+
+  def eaas
+  end
+
   def bad_browsers
     title "Navegador inválido"
   end
