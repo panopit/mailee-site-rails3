@@ -1,0 +1,23 @@
+%style
+  :sass
+    .first_box .case_img
+      position: absolute
+      top: -10px
+      left: 0px
+    .last_box .case_img
+      position: absolute
+      top: -10px
+      right: 0px
+
+- content_for :metatags do
+  %meta{ :name => 'Keywords', :content => 'Mailee.me, Mailee, Email, Marketing, 2.0' }
+  %meta{ :name => 'Description', :content => 'Mailee.me · Crie templates, envie mensagens e acompanhe resultados em um só lugar. Email marketing 2.0 tem criador de templates, geolocalização, integração com redes sociais, e muito mais!' }
+.content_wrapper
+  #mailee_resources
+    %h2 Cases
+    = kase 'qbazar', 'Ike Moraes', "CEO, #{link_to 'Q!Bazar', 'http://www.qbazar.com.br', :target => :_blank}", "SÃO PAULO/SP &dash; O Q!Bazar é um evento tradicional em São Paulo, criado em 2001.", "Estamos muito felizes com estes resultados [do Mailee] e esperamos que vocês se inspirem para encontrar soluções criativas para atingir seus objetivos utilizando o Mailee.me!<br /><strong>#{link_to 'Saiba mais', 'http://blog.mailee.me/qbazarnet-um-caso-de-sucesso-de-e-commerce-us', :target => :_blank}</strong>"
+    = kase 'mmda', 'Diego Martinez', "Sócio Diretor, #{link_to 'MMDA Digital', 'http://www.mmdadigital.com.br'}", "PORTO ALEGRE/RS &dash; Desenvolvimento de sites e aplicações Web.", "O Mailee.me é um aplicativo de grande futuro, se destaca pela interface, desempenho e facilidade de uso. Também vale lembrar a agilidade da equipe de desenvolvimento no auxilio aos parceiros/clientes."
+    = kase 'mega', 'Marcos Vinicius Bohrer', "Proprietário, #{link_to 'Mega Internet', 'http://www.megainternet.com.br'}", 'CANELA E GRAMADO/RS &dash; Desenvolvimento de web-sites institucionais, lojas virtuais e hospedagem de sites', 'Após analisar diversas soluções no mercado, tanto nacional como internacional, e após a avaliação do serviço, optamos pelo Mailee.me por ser simples e intuitivo, e atendeu todas as nossas necessidades e dos nossos clientes.'
+    .clear
+    %h2.contact_us
+      %a{ :href => @commercial_mail } Quer compartilhar o seu case?

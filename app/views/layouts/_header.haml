@@ -24,6 +24,7 @@
 :javascript 
   $('#login_button').click(function(){
     $('.page_overlay').fadeIn('slow')
+    $('.page_overlay iframe').src($('.page_overlay iframe').src())
   })
   $('.close_login_panel').click(function(){
     $('.page_overlay').fadeOut('fast')

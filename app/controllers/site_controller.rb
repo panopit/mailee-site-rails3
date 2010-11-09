@@ -44,6 +44,10 @@ class SiteController < ApplicationController
     title "Principais recursos"
   end
 
+  def cases
+    title "Cases"
+  end
+
   def mailee
     ok = 'http://www.google.com'
     error = 'http://www.yahoo.com'
