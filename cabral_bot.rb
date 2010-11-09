@@ -1,34 +1,34 @@
 require 'rubygems'
 require 'percy'
 
-AWAY_MESSAGE = "Ninguém da Softa está online neste momento. Por favor, encaminhe suas dúvidas para o Cabral no email *suporte@mailee.me*."
-configure{|c| YAML.load_file('config/irc.yml').each{|k,v| c.send("#{k}=", v) } }
+def conf; @conf ||= YAML.load_file('config/irc.yml') end
+def channel; '#'+conf['channel'] end
 
-def softas; users_on('#maileeme') & %w{cabral leotartari joaomilho diobob danielw pedroaxl} end
+def users; users_on(channel) end
+def softas; users & conf['support']  end
+def support; softas.first  end
 def online; ! softas.empty? end
+def write_file; File.open('online.txt','w'){|f| f.write online.to_s } end
+def in_channel?(nick) users.include?(nick) end
+def msg(m=:away,to=nil,*p) message (to or channel), conf['messages'][m.to_s]%p end
 
-on(:connect){ join "#maileeme" }
+def support?(nick) conf['support'].include?(nick) end
 
-on [:join,:quit,:nickchange] do |env|
-  message env[:channel], "Verificando... tem alguém da Softa online? #{online ? 'Sim' : 'Não'}"
-  File.open('online.txt','w'){|f| f.write online.to_s }
+configure{|c| conf.each{|k,v| c.send("#{k}=", v) } }
+
+on(:connect){ join channel }
+on([:quit,:nickchange]){ write_file }
+on(:channel){ msg unless online }
+
+on :join do |e|
+  write_file
+  return if support? e[:nick]
+  online ? msg(:join, support, e[:nick]) : msg
 end
 
-on :channel do |env|  
-  message env[:channel], AWAY_MESSAGE unless online
-end
-
-on :query do |env|
-  if users_on('#maileeme').include?(env[:nick])
-    if online
-      message env[:nick], "Eu sou só um robô. Por favor, fale com o #{softas.first}."
-      message softas.first, "Hey! #{env[:nick]} precisa de suporte!"
-    else
-      message env[:nick], AWAY_MESSAGE
-    end
-  else
-    message env[:nick], "Para ajuda com o Mailee.me entre na sala #maileeme (/join #maileeme)."
-  end
+on :query do |e|
+  return msg(:pjoin, e[:nick]) unless in_channel?(e[:nick])
+  online ? msg(:frwd, e[:nick], support) || msg(:help, support, e[:nick]) : msg(:away, e[:nick])
 end
 
 connect

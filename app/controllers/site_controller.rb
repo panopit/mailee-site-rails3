@@ -1,6 +1,6 @@
 # encoding: utf-8
 class SiteController < ApplicationController
-  
+
   def index
   end
 
@@ -51,20 +51,20 @@ class SiteController < ApplicationController
   def mailee
     ok = 'http://www.google.com'
     error = 'http://www.yahoo.com'
-    url = "http://mailee.mailee.me/go/add_contact_form"
+    url = 'http://mailee.mailee.me/go/add_contact_form'
     data = {:name => params[:name], :email => params[:email], :key => "f9b5d3", "list[]" => 22642, :url_ok => ok, :url_error => error}
     res = Net::HTTP.post_form(URI.parse(url), data)
     render :json => {:ok => res['location'] == ok}
   end
-  
+
   # Sends the email via ajax.
   def contact
     Site.contact(params).deliver
     render :json => {:ok => true}.to_json
-  rescue 
+  rescue
     render :json => {:ok => false}.to_json
   end
-  
+
 protected
 
   before_filter :set_defaults

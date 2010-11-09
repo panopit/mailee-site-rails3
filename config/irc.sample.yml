@@ -3,3 +3,17 @@ username: USERNAME
 server: irc.freenode.net
 password: PASSWORD
 port: 6667
+channel: #CHANNEL
+support:
+  - cabral
+  - leotartari
+  - joaomilho
+  - diogob
+  - danielw
+  - pedroaxl
+messages:
+  join: Hey! %s entrou no IRC!
+  away: Ninguém da Softa está online neste momento. Por favor, encaminhe suas dúvidas para o Cabral no email *suporte@mailee.me*.
+  frwd: Eu sou só um robô. Por favor, fale com o %s.
+  help: Hey! %s precisa de suporte!
+  pjoin: Para ajuda com o Mailee.me entre na sala #maileeme (/join #maileeme).
