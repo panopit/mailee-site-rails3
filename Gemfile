@@ -10,7 +10,7 @@ gem 'mongrel', '1.2.0.pre2'
 #gem 'i18n_routing'
 # gem 'percy'
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
