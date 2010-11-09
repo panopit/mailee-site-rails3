@@ -30,8 +30,8 @@
     %iframe{ :src => 'http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14', :width => "800px", :height => "500px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
 :javascript 
   $('#login_button').click(function(){
-    $('.page_overlay iframe').src($('.page_overlay iframe').src())
     $('.page_overlay.login_form').fadeIn('slow')
+    $('.page_overlay iframe').src($('.page_overlay iframe').src())
     return false
   })
   $('.chat_online a').click(function(){
@@ -39,6 +39,10 @@
     return false
   })
   $('.close_login_panel').click(function(){
+    $('.page_overlay').fadeOut('fast')
+    return false
+  })
+  $('.page_overlay').click(function(){
     $('.page_overlay').fadeOut('fast')
     return false
   })
