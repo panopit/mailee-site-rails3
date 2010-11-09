@@ -9,7 +9,7 @@ module Hercules
 
     def self.after_deploy(options)
       cmd = options[:shell]
-      #cmd.run "kill -HUP \`cat /home/mailee/pids/#{options[:branch]}/site-unicorn.pid\`"
+      cmd.run "kill -HUP \`cat /home/mailee/pids/#{options[:branch]}/site-unicorn.pid\`"
     end 
   end 
 end
