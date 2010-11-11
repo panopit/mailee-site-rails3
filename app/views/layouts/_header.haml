@@ -28,22 +28,34 @@
     .close_login_panel{:style => 'margin: -276px 0 0 402px;'}
       #{image_tag('close.png')}
     %iframe{ :src => 'http://webchat.freenode.net?channels=maileeme&uio=MTA9dHJ1ZSYxMT0yMjYmMTI9dHJ1ZQ14', :width => "800px", :height => "500px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
+
 :javascript 
+  logins = 0
   $('#login_button').click(function(){
+    $('#flash_video').css({'visibility':'hidden'})
     $('.page_overlay.login_form').fadeIn('slow')
-    $('.page_overlay iframe').src($('.page_overlay iframe').src())
+    //if( logins )
+    //  $('#login_form_box iframe').attr('src',$('#login_form_box iframe').attr('src'))
+
+    logins++
     return false
   })
   $('.chat_online a').click(function(){
+    $('#flash_video').css({'visibility':'hidden'})
     $('.page_overlay.chat_box').fadeIn('slow')
     return false
   })
   $('.close_login_panel').click(function(){
-    $('.page_overlay').fadeOut('fast')
+    $('.page_overlay').fadeOut('fast', function(){
+      $('#flash_video').css({'visibility':'visible'})
+    })
     return false
   })
   $('.page_overlay').click(function(){
-    $('.page_overlay').fadeOut('fast')
+    $('.page_overlay').fadeOut('fast', function(){    
+      $('#flash_video').css({'visibility':'visible'}) 
+    })
+    
     return false
   })
   forward = function(){ $('.chat_online .bull').animate({color: '#8CC63F'}, 'slow', rewind) }
