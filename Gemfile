@@ -11,6 +11,7 @@ gem 'mongrel', '1.2.0.pre2'
 # gem 'percy'
 # Use unicorn as the web server
 gem 'unicorn'
+gem 'percy'
 
 # Deploy with Capistrano
 # gem 'capistrano'
