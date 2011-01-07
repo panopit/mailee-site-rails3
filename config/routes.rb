@@ -14,14 +14,14 @@ MaileeSiteRails3::Application.routes.draw do
 
   # Site paths
 
-  get "cases(.html)", :controller => :site, :action => :cases, :as => :cases
-  get "eaas", :controller => :site, :action => :eaas
-  get "apps(.html)", :controller => :site, :action => :apps
-  
-  get "trabalhando", :controller => :working_on, :action => :index
-
-  post "mailee", :controller => :site, :action => :mailee, :as => :mailee
-  get "contato(.html)", :controller => :site, :action => :contact, :as => :contact
+  # get "cases(.html)", :controller => :site, :action => :cases, :as => :cases
+  # get "eaas", :controller => :site, :action => :eaas
+  # get "apps(.html)", :controller => :site, :action => :apps
+  # 
+  # get "trabalhando", :controller => :working_on, :action => :index
+  # 
+  # post "mailee", :controller => :site, :action => :mailee, :as => :mailee
+  # get "contato(.html)", :controller => :site, :action => :contact, :as => :contact
   get "politica_anti_spam(.html)", :controller => :site, :action => :spam, :as => :spam
   get "cadastro(.html)", :controller => :site, :action => :signup, :as => :signup
   get "termos_de_uso(.html)", :controller => :site, :action => :terms, :as => :terms
@@ -29,10 +29,10 @@ MaileeSiteRails3::Application.routes.draw do
   get "melhores_praticas(.html)", :controller => :site, :action => :best_practices, :as => :best_practices
   get "recursos(.html)", :controller => :site, :action => :tour, :as => :tour
   get "precos(.html)", :controller => :site, :action => :prices, :as => :prices
-  get "bad_browsers(.html)", :controller => :site, :action => :bad_browsers, :as => :bad_browsers
-  # Mailee form paths
-  get "form_ok(.html)", :controller => :site, :action => :form_ok, :as => :form_ok
-  get "form_error(.html)", :controller => :site, :action => :form_error, :as => :form_error
+  # get "bad_browsers(.html)", :controller => :site, :action => :bad_browsers, :as => :bad_browsers
+  # # Mailee form paths
+  # get "form_ok(.html)", :controller => :site, :action => :form_ok, :as => :form_ok
+  # get "form_error(.html)", :controller => :site, :action => :form_error, :as => :form_error
   # Root path
   root :to => 'site#index'
 
