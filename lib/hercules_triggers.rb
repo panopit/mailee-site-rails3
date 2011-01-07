@@ -4,6 +4,7 @@ module Hercules
       env = (options[:branch] == "master" ? "development" : options[:branch])
       cmd = options[:shell]
       cmd.run "cp config/pivotal_tracker.sample.yml config/pivotal_tracker.yml"
+      cmd.run "cp /home/mailee/configs/site-rails3/irc.yml config/irc.yml"
       true
     end 
 

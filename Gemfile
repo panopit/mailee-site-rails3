@@ -8,9 +8,12 @@ gem 'compass', '>= 0.10.3'
 gem 'RedCloth'
 gem 'mongrel', '1.2.0.pre2'
 #gem 'i18n_routing'
-# gem 'percy'
+
 # Use unicorn as the web server
 gem 'unicorn'
+
+# gem 'percy'
+# Do NOT uncomment percy!
 
 # Deploy with Capistrano
 # gem 'capistrano'
