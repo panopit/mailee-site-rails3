@@ -17,8 +17,7 @@ module SiteHelper
   def global_login;         'http://signup.mailee.me/site_sessions/new' end
   def blog_path;            'http://blog.mailee.me' end
   def twitter_path;         'http://twitter.com/maileeme' end
-  def support_mail;         'suporte@mailee.me' end
-  def commercial_mail;      'comercial@mailee.me' end
+  def support_mail;         'mailto:suporte@mailee.me' end
+  def commercial_mail;      'mailto:comercial@mailee.me' end
   def help_path(page=nil);  "http://help.mailee.me/#{page}" end
-
 end
