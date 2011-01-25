@@ -22,7 +22,36 @@
         errormsg: "#{t('blog.errormsg')}"
       });
     });
+#mailee_awards
+  .awards_wrapper
+    %table{:style => 'margin-top:30px', :cellpadding => 0, :cellspacing => 0}
+      %tr
+        %td{:style => 'padding:0 10px 0 0'}
+          = image_tag 'awards/tdp_ok.png', :style => 'float:left;margin-right:0 5px 10px 0'
+          %strong{:style => 'font-size:1.1em'} 1º lugar no Tire do Papel
+          %br
+          O Mailee.me foi apontado como uma das 10 startups mais promissoras de 2010 de acordo com a Read Write Web.
+          %br
+          = link_to 'saiba mais', '#'
+        %td{:style => 'padding:0 10px 0 0'}
+          = image_tag 'awards/rrw_ok.png', :style => 'float:left;margin-right:0 5px 10px 0'
+          %strong{:style => 'font-size:1.1em'} 10 startups mais inovadoras
+          %br
+          O Mailee.me foi apontado como uma das 10 startups mais promissoras de 2010 de acordo com a Read Write Web.
+          %br
+          = link_to 'saiba mais', '#'
+        %td{:style => 'padding:0'}
+          = image_tag 'awards/cp_ok.png', :style => 'float:left;margin:0 5px 10px 0'
+          %strong{:style => 'font-size:1.1em'} 2º lugar na Campus Party
+          %br
+          O Mailee.me foi apontado como uma das 10 startups mais promissoras de 2010 de acordo com a Read Write Web.
+          %br
+          = link_to 'saiba mais', '#'
+
+%hr
+
 #mailee_blog
+
   .blog_wrapper
     %h2= link_to((image_tag("social/rss_32.png") + ' Blog'), blog_path)
     #mailee_rss_blog
