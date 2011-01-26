@@ -3,8 +3,8 @@ module Hercules
     def self.before_deploy(options)
       env = (options[:branch] == "master" ? "development" : options[:branch])
       cmd = options[:shell]
-      cmd.run "cp config/pivotal_tracker.sample.yml config/pivotal_tracker.yml"
-      cmd.run "cp /home/mailee/configs/site-rails3/irc.yml config/irc.yml"
+      cmd.run "cp /home/mailee/configs/site-rails3/irc.yml config/"
+      cmd.run "cp /home/mailee/configs/site-rails3/pivotal_tracker.yml config/"
       true
     end 
 
