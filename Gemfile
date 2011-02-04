@@ -10,7 +10,7 @@ gem 'mongrel', '1.2.0.pre2'
 #gem 'i18n_routing'
 
 # Use unicorn as the web server
-gem 'unicorn'
+#gem 'unicorn'
 
 # gem 'percy'
 # Do NOT uncomment percy!
