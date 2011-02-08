@@ -20,5 +20,4 @@ module SiteHelper
   def support_mail;         'mailto:suporte@mailee.me' end
   def commercial_mail;      'mailto:comercial@mailee.me' end
   def help_path(page=nil);  "http://help.mailee.me/#{page}" end
-
 end

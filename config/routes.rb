@@ -14,7 +14,7 @@ MaileeSiteRails3::Application.routes.draw do
 
   # Site paths
 
-  # get "cases(.html)", :controller => :site, :action => :cases, :as => :cases
+  get "cases(.html)", :controller => :site, :action => :cases, :as => :cases
   # get "eaas", :controller => :site, :action => :eaas
   # get "apps(.html)", :controller => :site, :action => :apps
   # 
