@@ -96,7 +96,7 @@
     .feature.first_box.support
       .feature_wrapper
         %h3 Suporte técnico incansável
-        %p #{mail_to support_mail, 'Entre em contato'} sempre que precisar, e conte com uma solução ágil e de qualidade.
+        %p #{link_to 'Entre em contato', support_mail} sempre que precisar, e conte com uma solução ágil e de qualidade.
     .feature.upgrades
       .feature_wrapper
         %h3 Atualizações frequentes
@@ -121,4 +121,4 @@
         %p O Mailee.me utiliza CSS3 e outras tecnologias suportadas pelos principais navegadores modernos.
     .clear
     %h2.contact_us
-      = mail_to commercial_mail, 'Precisa de alguma informação que não encontrou aqui?'
+      = link_to 'Precisa de alguma informação que não encontrou aqui?', commercial_mail
