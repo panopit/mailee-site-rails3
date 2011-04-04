@@ -81,7 +81,7 @@
               %strong 1 milhão de créditos
             %td.right_aligned.price R$ 1.800,00
             %td.centered R$ 0,0018 por envio
-      %p Precisa de um pacote maior? #{mail_to commercial_mail, 'Entre em contato'}.
+      %p Precisa de um pacote maior? #{link_to 'Entre em contato', commercial_mail}.
     .span-10.last
       %h3 Formas de pagamento
       %p
@@ -107,7 +107,7 @@
       .clear
       %hr
       %h3 Possui uma agência?
-      %p #{mail_to commercial_mail, 'Entre em contato'} para conhecer nossos descontos.
+      %p #{link_to 'Entre em contato', commercial_mail} para conhecer nossos descontos.
       %hr
       %h1
         %a.signup_now{ :href => signup_path } Contrate já &raquo;
