@@ -10,78 +10,99 @@
       %br
       É como um celular <strong>pré-pago</strong>, só que seus créditos nunca expiram!
     .clear
-    .span-13.append-1
+    .span-13.append-1{:style => 'position:relative'}
+      = image_tag 'aproveite.png', :style => 'position:absolute;top:-25px;left:270px'
+      %br
+      %br
+      %br
       %table#prices_table{ :cellspacing => 0, :cellpadding => 0 }
         %thead
           %tr
             %th.right_aligned
               %h3 Pacote
             %th.right_aligned
-              %h3 Preço
+              %h3 Preço antigo
+            %th.right_aligned.promo
+              %h3 Promoção*
             %th.centered
               %h3 Preço por envio
         %tbody
           %tr
             %td.right_aligned
               %strong 500 créditos
-            %td.right_aligned.price R$ 18,00
+            %td.right_aligned.old_price R$ 18,00
+            %td.right_aligned.price.promo R$ 18,00
             %td.centered R$ 0,036 por envio
           %tr.even
             %td.right_aligned
               %strong 1 mil créditos
-            %td.right_aligned.price R$ 25,00
+            %td.right_aligned.old_price R$ 25,00
+            %td.right_aligned.price.promo R$ 25,00
             %td.centered R$ 0,024 por envio
           %tr
             %td.right_aligned
               %strong 5 mil créditos
-            %td.right_aligned.price R$ 50,00
+            %td.right_aligned.old_price R$ 50,00
+            %td.right_aligned.price.promo R$ 50,00
             %td.centered R$ 0,01 por envio
           %tr.even
             %td.right_aligned
               %strong 10 mil créditos
-            %td.right_aligned.price R$ 70,00
+            %td.right_aligned.old_price R$ 70,00
+            %td.right_aligned.price.promo R$ 70,00
             %td.centered R$ 0,007 por envio
           %tr
             %td.right_aligned
               %strong 25 mil créditos
-            %td.right_aligned.price R$ 150,00
+            %td.right_aligned.old_price R$ 150,00
+            %td.right_aligned.price.promo R$ 150,00
             %td.centered R$ 0,006 por envio
           %tr.even
             %td.right_aligned
               %strong 50 mil créditos
-            %td.right_aligned.price R$ 250,00
+            %td.right_aligned.old_price R$ 250,00
+            %td.right_aligned.price.promo R$ 250,00
             %td.centered R$ 0,005 por envio
           %tr
             %td.right_aligned
               %strong 75 mil créditos
-            %td.right_aligned.price R$ 330,00
+            %td.right_aligned.old_price R$ 330,00
+            %td.right_aligned.price.promo R$ 330,00
             %td.centered R$ 0,0044 por envio
           %tr.even
             %td.right_aligned
               %strong 100 mil créditos
-            %td.right_aligned.price R$ 400,00
+            %td.right_aligned.old_price R$ 400,00
+            %td.right_aligned.price.promo R$ 400,00
             %td.centered R$ 0,004 por envio
           %tr
             %td.right_aligned
               %strong 175 mil créditos
-            %td.right_aligned.price R$ 630,00
+            %td.right_aligned.old_price R$ 630,00
+            %td.right_aligned.price.promo R$ 630,00
             %td.centered R$ 0,0036 por envio
           %tr.even
             %td.right_aligned
               %strong 250 mil créditos
-            %td.right_aligned.price R$ 700,00
+            %td.right_aligned.old_price R$ 700,00
+            %td.right_aligned.price.promo R$ 700,00
             %td.centered R$ 0,0028 por envio
           %tr
             %td.right_aligned
               %strong 500 mil créditos
-            %td.right_aligned.price R$ 1.100,00
+            %td.right_aligned.old_price R$ 1.100,00
+            %td.right_aligned.price.promo R$ 1.100,00
             %td.centered R$ 0,0022 por envio
           %tr.even
             %td.right_aligned
               %strong 1 milhão de créditos
-            %td.right_aligned.price R$ 1.800,00
+            %td.right_aligned.old_price R$ 1.800,00
+            %td.right_aligned.price.promo R$ 1.800,00
             %td.centered R$ 0,0018 por envio
-      %p Precisa de um pacote maior? #{mail_to commercial_mail, 'Entre em contato'}.
+      %p
+        Precisa de um pacote maior? #{mail_to commercial_mail, 'Entre em contato'}.
+        %br
+        * Promoção válida até TODO
     .span-10.last
       %h3 Formas de pagamento
       %p

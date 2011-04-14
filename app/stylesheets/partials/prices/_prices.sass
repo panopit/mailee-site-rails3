@@ -17,6 +17,9 @@ body#prices
       background: white
       margin-bottom: 0
       thead
+        th.promo
+          background: #06a
+          box-shadow: 0 0 2px black
         th
           padding: .5em
           background:
@@ -32,16 +35,34 @@ body#prices
             margin: 0
             padding: .5em
       tbody
+
+        tr.even td.promo
+          background: #ffa
         td
           color: #666
           strong
             color: #333
-        td.price
+        td.promo
+          background: #ffd
+        
           font:
             size: 20px
             weight: 900
             family: 'Droid Sans', Arial, sans-serif
           color: #222
+        td.old_price
+          font:
+            size: 16px
+
+            family: 'Droid Sans', Arial, sans-serif
+          color: #a33
+          text-decoration: line-through
+
+        tr.even:hover td.promo
+          text-shadow: $blue_dark 0 -1px 0
+          background-color: $blue_light
+          color: white !important
+
         tr:hover td
           text-shadow: $blue_dark 0 -1px 0
           background-color: $blue_light
