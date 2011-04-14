@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'yaml'
 require 'percy'
 
 def conf; @conf ||= YAML.load_file('config/irc.yml') end
