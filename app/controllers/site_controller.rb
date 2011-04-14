@@ -1,8 +1,7 @@
 # encoding: utf-8
 class SiteController < ApplicationController
 
-  caches_page :index, :tour, :bad_browsers, :privacy, :terms
-  # :prices
+  caches_page :index, :tour, :bad_browsers, :privacy, :terms, :prices
 
   def index
   end
