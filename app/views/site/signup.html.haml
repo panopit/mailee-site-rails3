@@ -4,7 +4,7 @@
 #signup_form
   .signup_wrapper
     %h1 Cadastro
-    - if @referrer
+    - if @referrer == 'appsumo'
       %h2 Você receberá 1000 créditos por mês durante um ano.
     - else
       %h2 Você terá 250 créditos para realizar testes.
