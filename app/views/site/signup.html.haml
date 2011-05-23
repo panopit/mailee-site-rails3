@@ -4,7 +4,10 @@
 #signup_form
   .signup_wrapper
     %h1 Cadastro
-    %h2 Você terá 250 créditos para realizar testes.
+    - if @referrer
+      %h2 Você receberá 1000 créditos por mês durante um ano.
+    - else
+      %h2 Você terá 250 créditos para realizar testes.
     -# %iframe{ :src => signup_iframe_path, :width => "100%", :height => "180px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
 
 :javascript
