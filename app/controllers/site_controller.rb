@@ -32,6 +32,7 @@ class SiteController < ApplicationController
   end
 
   def signup
+    @referrer = params["referrer"]
   end
 
   def spam
