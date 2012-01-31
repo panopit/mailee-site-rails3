@@ -55,14 +55,6 @@ header
         margin: 0
         display: inline
         font-size: 1.5em
-        &.chat_online a, &.chat_online span.bull
-          color: $green
-        &.chat_offline a
-          color: #606060
-          &:hover, &:focus
-            color: #909090
-          &:active
-            color: #808080
         a
           color: #ccc
           &:hover, &:focus
@@ -90,18 +82,6 @@ header
   top: 50%
   left: 50%
   z-index: 800
-#chat_box
-  +box-shadow(0,0,50px,#fff)
-  +rounded(15px)
-  padding: 15px
-  position: fixed
-  width: 800px
-  height: 500px
-  background: #000
-  margin: -265px 0 0 -415px
-  top: 50%
-  left: 50%
-  z-index: 800
 .close_login_panel
   z-index: 900
   top: 50%
@@ -109,4 +89,3 @@ header
   position: fixed
   width: 24px
   height: 24px
-  

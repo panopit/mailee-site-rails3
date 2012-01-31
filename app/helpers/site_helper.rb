@@ -6,9 +6,12 @@ module SiteHelper
   
   def env_path
     case Rails.env
-      when   'development' : 'wizee.net'
-      when 'preproduction' : 'maileebeta.me'
-      when    'production' : 'mailee.me'
+      when 'development'
+         'wizee.net'
+      when 'preproduction'
+        'maileebeta.me'
+      when 'production'
+        'mailee.me'
     end
   end
   def selected(current);    selected_menu.to_s == current.to_s ? 'current_view' : '';             end
