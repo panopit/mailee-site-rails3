@@ -29,7 +29,7 @@ MaileeSiteRails3::Application.routes.draw do
   get "melhores_praticas(.html)", :controller => :site, :action => :best_practices, :as => :best_practices
   get "recursos(.html)", :controller => :site, :action => :tour, :as => :tour
   get "precos(.html)", :controller => :site, :action => :prices, :as => :prices
-  # get "bad_browsers(.html)", :controller => :site, :action => :bad_browsers, :as => :bad_browsers
+  get "bad_browsers(.html)", :controller => :site, :action => :bad_browsers, :as => :bad_browsers
   # # Mailee form paths
   # get "form_ok(.html)", :controller => :site, :action => :form_ok, :as => :form_ok
   # get "form_error(.html)", :controller => :site, :action => :form_error, :as => :form_error
