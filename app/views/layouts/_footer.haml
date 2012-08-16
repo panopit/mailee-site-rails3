@@ -17,9 +17,11 @@
       %li= link_to 'Comercial', commercial_mail
     %hr
     .web_links
-      = link_to((image_tag('social/rss_16.png') + ' Blog'), blog_path)
-      &nbsp;&nbsp;&nbsp;
-      = link_to((image_tag('social/twitter_16.png') + ' Twitter'), twitter_path)
+      = link_to((image_tag('social/rss_16.png') + ' Blog'), blog_path, :style => 'margin: 2px 0')
+      %br
+      = link_to((image_tag('social/facebook_16.png') + ' Facebook'), 'http://facebook.com/mailee.me',:style => 'margin: 2px 0')
+      %br
+      = link_to((image_tag('social/twitter_16.png') + ' Twitter'), twitter_path, :style => 'margin: 2px 0')
   .span-6.last
     #newsletter{:style => 'height:200px;' }
       %h3 Receba nossa newsletter

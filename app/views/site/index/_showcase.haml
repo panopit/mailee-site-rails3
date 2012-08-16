@@ -20,12 +20,13 @@
             %a.signup_now{ :href => signup_path } Experimente grátis &raquo;
         .video.slideme.span-12
           .video_wrapper
-            %object#flash_video{ :width => 475, :height => 300, :style => 'z-index:-10' }
-              %param{ :name => :movie, :value => "http://www.youtube.com/v/pKjJcRkGBPg?fs=1&amp;hl=en_US" }
-              %param{ :name => "wmode", :value => "transparent" }
-              %param{ :name => "allowFullScreen", :value => "true" }
-              %param{ :name => "allowscriptaccess", :value => "always" }
-              %embed{ :src => "http://www.youtube.com/v/pKjJcRkGBPg?fs=1&amp;hl=en_US",  :type => "application/x-shockwave-flash", :allowscriptaccess => "always", :allowfullscreen => "true", :width => 475, :height => 300 }
+            %iframe{:width =>"475", :height => "300", :src => "http://www.youtube.com/embed/kChYgeIpOZk?rel=0", :frameborder => "0", :allowfullscreen => nil}
+            -#%object#flash_video{ :width => 475, :height => 300, :style => 'z-index:-10' }
+              -#%param{ :name => :movie, :value => "http://www.youtube.com/v/kChYgeIpOZk?fs=1&amp;hl=en_US" }
+              -#%param{ :name => "wmode", :value => "transparent" }
+              -#%param{ :name => "allowFullScreen", :value => "true" }
+              -#%param{ :name => "allowscriptaccess", :value => "always" }
+              -#%embed{ :src => "http://www.youtube.com/v/kChYgeIpOZk?fs?fs=1&amp;hl=en_US",  :type => "application/x-shockwave-flash", :allowscriptaccess => "always", :allowfullscreen => "true", :width => 475, :height => 300 }
       .showcase{:style => 'display:none'}
         .span-11
           .showcase_image

@@ -52,6 +52,7 @@ class SiteController < ApplicationController
   end
 
   def mailee
+    require 'net/http'
     ok = 'http://www.google.com'
     error = 'http://www.yahoo.com'
     url = 'http://mailee.mailee.me/go/add_contact_form'
