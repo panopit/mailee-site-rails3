@@ -1,0 +1,423 @@
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}
+      / <meta name="viewport" content="initial-scale=1.0, width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      %title Mailee
+      = stylesheet_link_tag "/agencies/css/bootstrap.css"
+      = stylesheet_link_tag "/agencies/css/style.css"
+      = stylesheet_link_tag "/agencies/css/signup.css"
+      / %link{:href => "css/style.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
+      / %link{:href => "css/signup.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
+      %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans:400,700", :media => "screen", :rel => "stylesheet", :type => "text/css"}
+      / = stylesheet_link_tag "/agencies/css/signup.css"
+      %script{:charset => "utf-8", :src => "/agencies/javascripts/jquery.js", :type => "text/javascript"}
+      %script{:charset => "utf-8", :src => "/agencies/javascripts/scrollspy.js", :type => "text/javascript"}
+      %script{:src => "/agencies/javascripts/jquery.carouFredSel.js", :type => "text/javascript"}
+  %body{"data-spy" => "scroll"}
+    #toptop
+    %header#header
+      .social
+        .center
+          %ul.socials
+            %li.facebook
+              %a{:href => "http://www.facebook.com/Mailee.me", :target => "_blank"} Facebook
+            %li.twitter
+              %a{:href => "http://twitter.com/maileeme", :target => "_blank"} @maileeme
+            %li.blog
+              %a{:href => "http://blog.mailee.me/"} Blog
+          %ul.actions
+            %li
+              %a.btn{:href => "#"} login
+            %li
+              %a.btn{:href => "#"} experimente
+      .menu
+        .center
+          %a#logo.scroll{:href => "#toptop"}
+            %h1 Mailee
+          %ul.nav
+            %li.active
+              %a.scroll{:href => "#recursos"}
+                Recursos
+                %span Conheça as funcionalidades
+            %li
+              %a.scroll{:href => "#prices"}
+                Preços
+                %span Agências têm preços diferenciados.
+            %li
+              %a.scroll{:href => "#sign-up"}
+                Cadastre-se
+                %span Receba 250 créditos de teste
+            %li
+              %a.scroll{:href => "#footer"}
+                Contato
+                %span Alguma dúvida? Fale com a gente!
+    %section#content
+      .resources
+        .all
+          #resources.center
+            %div{:style => "color: #fff"}
+              .pull-left
+                %h1 Email Marketing 2.0, pensado especialmente para agências.
+                %p Planejamento, envio e relatórios de email marketing no mesmo lugar, sem dificuldades. E ainda com preços especiais.
+              .pull-right
+                %a.btn.btn-success.btn-large{:href => "#"} começe agora
+              .clear
+            .image_carousel{:style => "min-height:450px"}
+              #foo2
+                %img{:alt => "basketball", :src => "/agencies/images/skin.png"}/
+                %img{:alt => "beachtree", :src => "/agencies/images/skin2.png"}/
+                %img{:alt => "beachtree 2", :src => "/agencies/images/skin3.png"}/
+                %img{:alt => "beachtree 2", :src => "/agencies/images/skin4.png"}/
+                %img{:alt => "beachtree 3", :src => "/agencies/images/skin5.png"}/
+                %img{:alt => "beachtree 4", :src => "/agencies/images/skin6.png"}/
+              .clearfix
+              %a#foo2_prev.prev{:href => "#"}
+                %span Anterior
+              %a#foo2_next.next{:href => "#"}
+                %span Próximo
+              #foo2_pag.pagination
+            #recursos.content
+              %h2 Recursos
+              %ul.menu
+                %li
+                  %a{:href => "#resources-clientes"} Clientes
+                %li
+                  %a{:href => "#resources-templates"} Templates
+                %li
+                  %a{:href => "#resources-messages"} Mensagens
+                %li
+                  %a{:href => "#resources-contatos"} Contatos
+                %li
+                  %a{:href => "#resources-relatorios"} Relatórios
+                %li
+                  %a{:href => "#resources-integracao"} Integração
+              .clear
+              .hide
+                #resources-clientes
+                  .box
+                    %h4 Gerenciamento de clientes
+                    %p Adicione quantos clientes quiser e faça envios para cada um com facilidade e eficiência.
+                    %img{:alt => "skin-clientes", :height => "193", :src => "/agencies/images/skin-clientes1.png", :width => "450"}/
+                  .box
+                    %h4 Divisão de créditos
+                    %p Compre créditos e distribua entre seus clientes da maneira como preferir.
+                    %img{:alt => "skin-clientes", :height => "193", :src => "/agencies/images/skin-clientes2.png", :width => "450"}/
+                  .clear
+                #resources-templates
+                  .box
+                    %h4 Upload de templates
+                    %p Faça upload de seus templates agilmente, para mandar suas mensagens do jeito que você prefere.
+                    %img{:alt => "skin-templates", :height => "193", :src => "/agencies/images/skin-templates1.png", :width => "450"}/
+                  .box
+                    %h4 Criação de layouts
+                    %p
+                      Construa templates online do zero sem dificuldade. Crie imagens de cabeçalho com seu logo, suas
+                      informações e o seu estilo.
+                    %img{:alt => "skin-templates", :height => "193", :src => "/agencies/images/skin-templates2.png", :width => "450"}/
+                  .clear
+                #resources-messages
+                  .box
+                    %h4 Edição fácil
+                    %p Edite o conteúdo das mensagens direto na tela, sem interferir no design.
+                    %img{:alt => "skin-mensagens", :height => "193", :src => "/agencies/images/skin-mensagens1.png", :width => "450"}/
+                  .box
+                    %h4 Envie para segmentos
+                    %p Direcione campanhas para segmentos específicos. Retornos maiores, com investimento reduzido.
+                    %img{:alt => "skin-mensagens", :height => "193", :src => "/agencies/images/skin-mensagens2.png", :width => "450"}/
+                  .clear
+                #resources-contatos
+                  .box
+                    %h4 Segmentação de contatos
+                    %p Crie segmentos pesquisando por qualquer informação de seus contatos, incluindo campos personalizados.
+                    %img{:alt => "skin-contatos", :height => "193", :src => "/agencies/images/skin-contatos1.png", :width => "450"}/
+                  .box
+                    %h4 Importação simples
+                    %p Importe sem stress seus contatos de planilhas Excel©, OpenOffice, Google Docs etc.
+                    %img{:alt => "skin-contatos", :height => "193", :src => "/agencies/images/skin-contatos2.png", :width => "450"}/
+                  .clear
+                #resources-relatorios
+                  .box
+                    %h4 Relatórios geolocalizados e em tempo real
+                    %p Com nossa visualização em tempo real, você acompanha acessos e cliques na hora, sabendo onde seus contatos estão.
+                    %img{:alt => "skin-relatorios", :height => "193", :src => "/agencies/images/skin-relatorios1.png", :width => "450"}/
+                  .box
+                    %h4 Integração com Google Analytics
+                    %p Com o Mailee.me e o seu Google Analytics trabalhando juntos, você saberá direitinho de onde vieram aquelas suas novas conversões.
+                    %img{:alt => "skin-relatorios", :height => "193", :src => "/agencies/images/skin-relatorios2.png", :width => "450"}/
+                  .clear
+                #resources-integracao
+                  .box
+                    %h4 API REST
+                    %p Utilize o Mailee na sua aplicação através da nossa integração REST. Facilidade para o seu sistema.
+                    %img{:alt => "skin-integracao", :height => "193", :src => "/agencies/images/skin-integracao1.png", :width => "450"}/
+                  .box
+                    %h4 Adicione formulários facilmente
+                    %p Coloque formulários em sites para cadastrar e descadastrar contatos diretamente no Mailee.me.
+                    %img{:alt => "skin-integracao", :height => "193", :src => "/agencies/images/skin-integracao2.png", :width => "450"}/
+                  .clear
+              / .hide
+              .wrap
+              / .wrap
+            / .content
+          / #resources
+        / .all
+      / .resources
+      .prices.separa
+        #prices.center
+          %h2 Preços
+          %p
+            Você compra um pacote de envios e pode usar ao longo do tempo que quiser.
+            %br
+              É como um celular pré-pago, só que seus créditos nunca expiram!
+          %ul
+            %li
+              %h5 Pacote
+              %span 100 mil créditos
+              %span.price R$ 11,11
+              %span.desc R$ 0,0 por envio
+              %a.btn{:href => "#"} comprar
+            %li
+              %h5 Pacote
+              %span 100 mil créditos
+              %span.price R$ 11,11
+              %span.desc R$ 0,0 por envio
+              %a.btn{:href => "#"} comprar
+            %li.last
+              %h5 Pacote
+              %span 100 mil créditos
+              %span.price R$ 11,11
+              %span.desc R$ 0,0 por envio
+              %a.btn{:href => "#"} comprar
+            %li.highlight
+              %h5 Pacote
+              %span 100 mil créditos
+              %span.price R$ 11,11
+              %span.desc R$ 0,0 por envio
+              %a.btn.btn-success{:href => "#"} comprar
+        / #prices
+      / .prices
+      .sign-up.separa
+        #sign-up.center
+          %h2 CADASTRO
+          %h4 Você terá 250 créditos para realizar testes.
+          / copy
+          %form#signup-form.signup_mailee_form{:action => "/signup", :autocomplete => "off", :method => "post"}
+            %fieldset
+              %table
+                %thead
+                  %tr
+                    %th
+                      %table{:style => "margin: 0;"}
+                        %thead
+                          %tr
+                            %td
+                              %label{:for => "user_email"} Email
+                            %td.right_aligned
+                              #email_messages
+                                %span.error_message.hide Preencha com um email válido
+                                %span.success_message.hide Email válido
+                              .clear
+                    %th
+                      %table{:style => "margin: 0;"}
+                        %thead
+                          %tr
+                            %td
+                              %label{:for => "client_subdomain"} Subdomínio
+                            %td.right_aligned
+                              #subdomain_messages
+                                %span.loading.hide
+                                  %img{:alt => "Loader", :src => "/agencies/images/loader.png"}/
+                                %span.error_message.hide Subdomínio inválido
+                                %span.success_message.hide Ótima escolha!
+                              .clear
+                    %th
+                      %table{:style => "margin: 0;"}
+                        %thead
+                          %tr
+                            %td
+                              %label{:for => "user_password"} Senha
+                            %td.right_aligned
+                              #password_messages
+                                %span.error_message.hide Senha inválida
+                                %span.success_message.hide Senha válida
+                              .hide
+                %tbody
+                  %tr
+                    %td
+                      #email_text_field.text_field
+                        %input#user_email{:maxlength => "250", :name => "user[email]", :size => "250", :tabindex => "1", :type => "text"}/
+                    %td
+                      #subdomain_text_field.text_field
+                        %input#client_subdomain.subdomain{:maxlength => "20", :name => "client[subdomain]", :size => "20", :tabindex => "2", :type => "text"}/
+                        %span.mailee_domain .mailee.me
+                    %td
+                      #password_text_field.text_field
+                        %input#user_password{:maxlength => "32", :name => "user[password]", :size => "32", :tabindex => "3", :type => "password"}/
+                      #yo{:style => "width:300px; position:relative; line-height: 18px;"}
+                        #password_strenght{:style => "float:left; width:172px;"}
+                        %div{:style => "text-align:right; width:120px; float:right;"}
+                          #show_password
+                            .show_password_icon
+                            %label.show_password_label{:for => "show_password"} Exibir senha  
+                          #hide_password.hide
+                            .hide_password_icon
+                            %label.hide_password_label{:for => "hide_password"} Ocultar senha  
+                  %tr
+                    %td
+                    %td{:style => "padding: 10px 0;"}
+                      #accept_and_signup
+                        %input#accept.check{:name => "accept", :tabindex => "4", :type => "checkbox"}/
+                        %label{:for => "accept"}
+                          Li e aceito os
+                          = succeed "." do
+                            %a{:href => "http://www.mailee.me/termos_de_uso.html", :target => "_blank"} termos de uso
+                        %span.accept_terms_messages.hide
+                    %td{:style => "padding: 10px 0;"}
+                      %button#send{:disabled => "disabled", :tabindex => "5", :type => "submit"}
+            :javascript
+              //
+                error_messages = []
+              //
+          %script{:src => "/agencies/javascripts/typewatch.js", :type => "text/javascript"}
+          %script{:src => "/agencies/javascripts/jquery.pstrength.signup.js", :type => "text/javascript"}
+          %script{:src => "/agencies/javascripts/caps.jquery.js", :type => "text/javascript"}
+          %script{:src => "/agencies/javascripts/new.js", :type => "text/javascript"}
+          / end copy
+        / #sign-up
+      / .sign-up
+      .contact
+        #contact.center
+          .boxes
+            %div
+              .pull-left
+                %img{:src => "/agencies/images/selo-papel.jpg"}
+              .pull-left.text
+                %h5 1º Lugar
+                %p Texto
+              .clear
+            / box
+            %div
+              .pull-left
+                %img{:src => "/agencies/images/selo-red-ww.jpg"}
+              .pull-left.text
+                %h5 1º Lugar
+                %p Texto
+              .clear
+            / box2
+            %div
+              .pull-left
+                %img{:src => "/agencies/images/selo-campus-party.jpg"}
+              .pull-left.text
+                %h5 1º Lugar
+                %p Texto
+              .clear
+            / box3
+            .clear
+          / .boxes
+        / #contact
+      / .contact
+    %footer#footer
+      .center
+        %div
+          .span4
+            %h4 Políticas
+            %ul
+              %li
+                %a{:href => "#"} Política anti-spam
+              %li
+                %a{:href => "#"} Política de privacidade
+              %li
+                %a{:href => "#"} Termos de uso
+            .socials
+              %a{:href => "http://www.facebook.com/Mailee.me", :target => "_blank"}
+                %img{:src => "/agencies/images/facebook-footer.png"} Facebook
+              %a{:href => "http://twitter.com/maileeme", :target => "_blank"}
+                %img{:src => "/agencies/images/twitter-footer.png"} @maileeme
+              %a{:href => "http://blog.mailee.me/"}
+                %img{:src => "/agencies/images/blog-footer.png"} Blog
+          .span4
+            %h4 Documentação
+            %ul
+              %li
+                %a{:href => "#"} Help
+              %li
+                %a{:href => "#"} Melhores práticas
+          .span4
+            %h4 Entre em contato
+            %ul
+              %li
+                %a{:href => "#"} Suporte
+              %li
+                %a{:href => "#"} Comercial
+          .span4.last
+            %h4 Receba nossa newsletter
+            %form{:action => "#", :method => "POST"}
+              %input.input-text{:name => "news[name]", :placeholder => "Nome", :type => "text"}
+                %input.input-text{:name => "news[email]", :placeholder => "Email", :type => "text"}
+                  %p ~1 email por mês
+                  %input.btn.btn-success{:type => "submit", :value => "Cadastrar"}
+          .clear
+        .pull-right.clear
+          %a#cx-logo{:href => "http://www.caixadeideias.com.br/", :target => "_blank"}
+            %span Caixa de Ideias
+    :javascript
+      function scroll(scrol, e){
+        if(scrol.length > 0 && $("#"+scrol[scrol.length-1]).length > 0){
+          if(e){
+            e.preventDefault();
+          }
+          var elementClicked = scrol[scrol.length-1];
+          var destination = $("#"+elementClicked).offset().top;
+          $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-218}, 500 );
+          return false;
+        }
+      }
+      $(document).ready(function() {
+        if(window.location && window.location.hash && window.location.hash.length > 0){
+          scroll(window.location.hash.split("#"));
+        }
+        $('.scroll').click(function(e) {
+           scrol = $(this).attr("href").split("#");
+           scroll(scrol, e);
+        });
+
+        $("#foo2").carouFredSel({
+          circular: true,
+          scroll:{
+            fx:"fade",
+            items: 1
+          },
+      auto: /* false */{
+        play: true,
+        duration: 2000,
+        items: 1
+          },
+          width: 960,
+          height: 430,
+          items: {
+            visible: 1,
+            width: 960,
+            height: 430,
+          },
+          prev  : { 
+            button  : "#foo2_prev",
+            key   : "left",
+          },
+          next  : { 
+            button  : "#foo2_next",
+            key   : "right",
+          },
+          pagination  : "#foo2_pag",
+        });
+      });
+      $('#header .menu .center ul').scrollspy();
+      $(".hide").hide();
+      $(".resources .content .wrap").html($("#resources-clientes").html());
+      $(".resources .content .menu li").first().addClass("active");
+      $(".resources .content .menu li a").on('click', function(e){
+        e.preventDefault();
+        $(".resources .content .menu li").removeClass("active");
+        $(this).parent().addClass("active");
+        $(".resources .content .wrap").html($($(this).attr('href')).html());
+      });

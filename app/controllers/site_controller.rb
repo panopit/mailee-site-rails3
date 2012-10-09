@@ -1,15 +1,14 @@
 # encoding: utf-8
 class SiteController < ApplicationController
 
-  caches_page :index, :tour, :bad_browsers, :privacy, :terms, :prices
+  # caches_page :index, :tour, :bad_browsers, :privacy, :terms, :prices
 
   def index
   end
 
-  def apps
-  end
-
-  def eaas
+  def agencies
+    # title "Agências"
+    render :layout => false
   end
 
   def bad_browsers

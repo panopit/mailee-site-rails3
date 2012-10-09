@@ -1,27 +1,7 @@
 MaileeSiteRails3::Application.routes.draw do
-=begin
-  resource :site, :controller => 'site' do
-    member do
-      get :spam
-      get :terms
-      get :privacy
-      get :best_practices
-      get :tour
-      get :prices
-    end
-  end
-=end
-
-  # Site paths
 
   get "cases(.html)", :controller => :site, :action => :cases, :as => :cases
-  # get "eaas", :controller => :site, :action => :eaas
-  # get "apps(.html)", :controller => :site, :action => :apps
-  # 
-  # get "trabalhando", :controller => :working_on, :action => :index
-  # 
   post "mailee", :controller => :site, :action => :mailee, :as => :mailee
-  # get "contato(.html)", :controller => :site, :action => :contact, :as => :contact
   get "politica_anti_spam(.html)", :controller => :site, :action => :spam, :as => :spam
   get "cadastro(.html)", :controller => :site, :action => :signup, :as => :signup
   get "termos_de_uso(.html)", :controller => :site, :action => :terms, :as => :terms
@@ -30,23 +10,9 @@ MaileeSiteRails3::Application.routes.draw do
   get "recursos(.html)", :controller => :site, :action => :tour, :as => :tour
   get "precos(.html)", :controller => :site, :action => :prices, :as => :prices
   get "bad_browsers(.html)", :controller => :site, :action => :bad_browsers, :as => :bad_browsers
-  # # Mailee form paths
-  # get "form_ok(.html)", :controller => :site, :action => :form_ok, :as => :form_ok
-  # get "form_error(.html)", :controller => :site, :action => :form_error, :as => :form_error
-  # Root path
-  root :to => 'site#index'
 
-=begin
-  @support_mail                 = "mailto:suporte@mailee.me"
-  @commercial_mail              = "mailto:comercial@mailee.me"
-  env = "#HOST#"
-  @help_path                    = "http://help.#{env}/"
-  @template_creating_path       = "http://help.#{env}/templates_creating.html"
-  @blog_path                    = "http://blog.mailee.me/"
-  @twitter_path                 = "http://www.twitter.com/maileeme"
-  @form_error_path              = "http://www.#{env}/form_error.html"
-  @form_ok_path                 = "http://www.#{env}/form_ok.html"
-  @mailee_signup_path           = "http://signup.#{env}/signup/new"
-=end
+  get "agencias(.html)", :controller => :site, :action => :agencies, :as => :agencies
+
+  root :to => 'site#index'
 
 end
