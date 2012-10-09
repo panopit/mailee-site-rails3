@@ -140,7 +140,7 @@ a.prev, a.next {
 	display: block;
 	position: absolute;
 	top: 120px;
-	z-index: 10;
+	z-index: 4;
 }
 a.prev {			left: -22px;
 					background-position: 0 0; }
