@@ -64,7 +64,7 @@
                 %a.btn.btn-success.btn-large{:href => "#"} começe agora
               .clear
             .image_carousel{:style => "min-height:450px"}
-              #foo2
+              #img_carousel
                 %img{:alt => "basketball", :src => "/agencies/images/skin.png"}/
                 %img{:alt => "beachtree", :src => "/agencies/images/skin2.png"}/
                 %img{:alt => "beachtree 2", :src => "/agencies/images/skin3.png"}/
@@ -72,11 +72,11 @@
                 %img{:alt => "beachtree 3", :src => "/agencies/images/skin5.png"}/
                 %img{:alt => "beachtree 4", :src => "/agencies/images/skin6.png"}/
               .clearfix
-              %a#foo2_prev.prev{:href => "#"}
+              %a#img_carousel_prev.prev{:href => "#"}
                 %span Anterior
-              %a#foo2_next.next{:href => "#"}
+              %a#img_carousel_next.next{:href => "#"}
                 %span Próximo
-              #foo2_pag.pagination
+              #img_carousel_pag.pagination
             #recursos.content
               %h2 Recursos
               %ul.menu
@@ -382,7 +382,7 @@
            scroll(scrol, e);
         });
 
-        $("#foo2").carouFredSel({
+        $("#img_carousel").carouFredSel({
           circular: true,
           scroll:{
             fx:"fade",
@@ -401,14 +401,14 @@
             height: 430,
           },
           prev  : { 
-            button  : "#foo2_prev",
+            button  : "#img_carousel_prev",
             key   : "left",
           },
           next  : { 
-            button  : "#foo2_next",
+            button  : "#img_carousel_next",
             key   : "right",
           },
-          pagination  : "#foo2_pag",
+          pagination  : "#img_carousel_pag",
         });
       });
       $('#header .menu .center ul').scrollspy();
