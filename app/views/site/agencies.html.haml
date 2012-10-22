@@ -1,57 +1,9 @@
 !!!
 %html
-  %head
-    %meta{:charset => "UTF-8"}
-      / <meta name="viewport" content="initial-scale=1.0, width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      %title Mailee
-      = stylesheet_link_tag "/agencies/css/bootstrap.css"
-      = stylesheet_link_tag "/agencies/css/style.css"
-      = stylesheet_link_tag "/agencies/css/signup.css"
-      / %link{:href => "css/style.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
-      / %link{:href => "css/signup.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
-      %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans:400,700", :media => "screen", :rel => "stylesheet", :type => "text/css"}
-      / = stylesheet_link_tag "/agencies/css/signup.css"
-      %script{:charset => "utf-8", :src => "/agencies/javascripts/jquery.js", :type => "text/javascript"}
-      %script{:charset => "utf-8", :src => "/agencies/javascripts/scrollspy.js", :type => "text/javascript"}
-      %script{:src => "/agencies/javascripts/jquery.carouFredSel.js", :type => "text/javascript"}
+  %head= render 'site/agencies/head'
   %body{"data-spy" => "scroll"}
     #toptop
-    %header#header
-      .social
-        .center
-          %ul.socials
-            %li.facebook
-              %a{:href => "http://www.facebook.com/Mailee.me", :target => "_blank"} Facebook
-            %li.twitter
-              %a{:href => "http://twitter.com/maileeme", :target => "_blank"} @maileeme
-            %li.blog
-              %a{:href => "http://blog.mailee.me/"} Blog
-          %ul.actions
-            %li
-              %a.btn{:href => "#"} login
-            %li
-              %a.btn{:href => "#"} experimente
-      .menu
-        .center
-          %a#logo.scroll{:href => "#toptop"}
-            %h1 Mailee
-          %ul.nav
-            %li.active
-              %a.scroll{:href => "#recursos"}
-                Recursos
-                %span Conheça as funcionalidades
-            %li
-              %a.scroll{:href => "#prices"}
-                Preços
-                %span Agências têm preços diferenciados.
-            %li
-              %a.scroll{:href => "#sign-up"}
-                Cadastre-se
-                %span Receba 250 créditos de teste
-            %li
-              %a.scroll{:href => "#footer"}
-                Contato
-                %span Alguma dúvida? Fale com a gente!
+    %header#header= render 'site/agencies/header'
     %section#content
       .resources
         .all
@@ -66,16 +18,18 @@
             .image_carousel{:style => "min-height:450px"}
               #img_carousel
                 %img{:alt => "basketball", :src => "/agencies/images/skin.png"}/
-                %img{:alt => "beachtree", :src => "/agencies/images/skin2.png"}/
-                %img{:alt => "beachtree 2", :src => "/agencies/images/skin3.png"}/
-                %img{:alt => "beachtree 2", :src => "/agencies/images/skin4.png"}/
-                %img{:alt => "beachtree 3", :src => "/agencies/images/skin5.png"}/
-                %img{:alt => "beachtree 4", :src => "/agencies/images/skin6.png"}/
+                / Descomentar o carousel quando formos usar
+                / %img{:alt => "beachtree", :src => "/agencies/images/skin2.png"}/
+                / %img{:alt => "beachtree 2", :src => "/agencies/images/skin3.png"}/
+                / %img{:alt => "beachtree 2", :src => "/agencies/images/skin4.png"}/
+                / %img{:alt => "beachtree 3", :src => "/agencies/images/skin5.png"}/
+                / %img{:alt => "beachtree 4", :src => "/agencies/images/skin6.png"}/
               .clearfix
-              %a#img_carousel_prev.prev{:href => "#"}
-                %span Anterior
-              %a#img_carousel_next.next{:href => "#"}
-                %span Próximo
+              / Descomentar o carousel quando formos usar
+              / %a#img_carousel_prev.prev{:href => "#"}
+              /   %span Anterior
+              / %a#img_carousel_next.next{:href => "#"}
+              /   %span Próximo
               #img_carousel_pag.pagination
             #recursos.content
               %h2 Recursos
@@ -163,40 +117,8 @@
           / #resources
         / .all
       / .resources
-      .prices.separa
-        #prices.center
-          %h2 Preços
-          %p
-            Você compra um pacote de envios e pode usar ao longo do tempo que quiser.
-            %br
-              É como um celular pré-pago, só que seus créditos nunca expiram!
-          %ul
-            %li
-              %h5 Pacote
-              %span 100 mil créditos
-              %span.price R$ 11,11
-              %span.desc R$ 0,0 por envio
-              %a.btn{:href => "#"} comprar
-            %li
-              %h5 Pacote
-              %span 100 mil créditos
-              %span.price R$ 11,11
-              %span.desc R$ 0,0 por envio
-              %a.btn{:href => "#"} comprar
-            %li.last
-              %h5 Pacote
-              %span 100 mil créditos
-              %span.price R$ 11,11
-              %span.desc R$ 0,0 por envio
-              %a.btn{:href => "#"} comprar
-            %li.highlight
-              %h5 Pacote
-              %span 100 mil créditos
-              %span.price R$ 11,11
-              %span.desc R$ 0,0 por envio
-              %a.btn.btn-success{:href => "#"} comprar
-        / #prices
-      / .prices
+
+      .prices.separa= render 'site/agencies/prices'
       .sign-up.separa
         #sign-up.center
           %h2 CADASTRO
@@ -294,7 +216,7 @@
                 %img{:src => "/agencies/images/selo-papel.jpg"}
               .pull-left.text
                 %h5 1º Lugar - Tire do Papel
-                %p
+                %span
                   O Mailee.me foi o grande vencedor do concurso Tire do Papel, 
                   realizado em novembro em Campinas. 
                 %a{:href => 'http://www.tiredopapel.com.br/'}
@@ -306,7 +228,7 @@
                 %img{:src => "/agencies/images/selo-red-ww.jpg"}
               .pull-left.text
                 %h5 10 mais inovadores
-                %p
+                %span
                   O Mailee.me foi apontado como uma das 10 startups mais 
                   promissoras de 2010 pela Read Write Web Brasil. 
                 %a{:href => 'http://webholic.com.br/2010/12/29/top-10-startups-brasileiras-de-2010/'}
@@ -318,7 +240,7 @@
                 %img{:src => "/agencies/images/selo-campus-party.jpg"}
               .pull-left.text
                 %h5 2º Lugar - Campus Party
-                %p
+                %span
                   O Mailee.me ficou em 2º lugar no Campuseiros Empreendem, concurso 
                   que contou com mais de 300 concorrentes. 
                 %a{:href => 'http://startups.ig.com.br/2011/vencedores-da-competicao-campuseiros-empreendem/'}
@@ -371,8 +293,8 @@
                   %input.btn.btn-success{:type => "submit", :value => "Cadastrar"}
           .clear
         .pull-right.clear
-          %a#cx-logo{:href => "http://www.caixadeideias.com.br/", :target => "_blank"}
-            %span Caixa de Ideias
+          %br
+          %br
     :javascript
       function scroll(scrol, e){
         if(scrol.length > 0 && $("#"+scrol[scrol.length-1]).length > 0){
@@ -394,34 +316,34 @@
            scroll(scrol, e);
         });
 
-        $("#img_carousel").carouFredSel({
-          circular: true,
-          scroll:{
-            fx:"fade",
-            items: 1
-          },
-      auto: /* false */{
-        play: true,
-        duration: 2000,
-        items: 1
-          },
-          width: 960,
-          height: 430,
-          items: {
-            visible: 1,
-            width: 960,
-            height: 430,
-          },
-          prev  : { 
-            button  : "#img_carousel_prev",
-            key   : "left",
-          },
-          next  : { 
-            button  : "#img_carousel_next",
-            key   : "right",
-          },
-          pagination  : "#img_carousel_pag",
-        });
+        // $("#img_carousel").carouFredSel({
+        //   circular: true,
+        //   scroll:{
+        //     fx:"fade",
+        //     items: 1
+        //   },
+        //   auto: /* false */{
+        //     play: true,
+        //     duration: 2000,
+        //     items: 1
+        //       },
+        //       width: 960,
+        //       height: 430,
+        //       items: {
+        //         visible: 1,
+        //         width: 960,
+        //         height: 430,
+        //       },
+        //       prev  : { 
+        //         button  : "#img_carousel_prev",
+        //         key   : "left",
+        //       },
+        //       next  : { 
+        //         button  : "#img_carousel_next",
+        //         key   : "right",
+        //       },
+        //       pagination  : "#img_carousel_pag",
+        //     });
       });
       $('#header .menu .center ul').scrollspy();
       $(".hide").hide();

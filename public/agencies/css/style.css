@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub,  tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
@@ -23,8 +23,8 @@ a { text-decoration: none; color: #2255A0; }
 
 .pull-left { float: left; }
 
-.pull-left h1 { font-size: 30px; width: 620px; padding-bottom: 20px; text-shadow: 0 1px 1px #222; }
-.pull-left p { text-shadow: 0 1px 1px #222; }
+.pull-left h1 { font-size: 30px; width: 620px; padding-bottom: 20px; text-shadow: 1px 2px 1px #000; }
+.pull-left p { text-shadow: 1px 1px 1px #000; }
 
 .pull-right { float: right; }
 
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 #content .resources > .all .content .box h4 { font-size: 18px; margin-bottom: 15px; }
 #content .resources > .all .content .box h4, #content .resources > .all .content .box p { padding: 0px 20px; }
 #content .prices { background: url("../images/black_linen_v2-price.png") repeat-x center top; padding-top: 30px; height: 500px; }
-#content .prices h2 { color: #fff; }
+#content .prices h2 { color: #fff; font-weight: normal; }
 #content .prices #prices > p { color: #fff; }
 #content .prices #prices ul { margin-top: 51px; }
 #content .prices #prices ul li { display: block; float: left; width: 220px; height: 267px; margin-top: 30px; text-align: center; z-index: 1; }
@@ -81,7 +81,11 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 #content .prices #prices ul li.highlight { margin: 0px; background: #fff; margin-left: -496px; border: 3px solid #2255a0; width: 270px; height: 294px; z-index: 2; -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.8); -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.8); box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.8); }
 #content .prices #prices ul li.highlight h5 { font-size: 30px; margin-top: 30px; margin-bottom: 36px; color: #2255a0; }
 #content .prices #prices ul li span { display: block; height: 30px; line-height: 30px; vertical-align: middle; background: #FAFBFC; }
-#content .prices #prices ul li span.price { background: #e3ffe2; }
+#content .prices #prices ul li span.price { background: #e3ffe2; font-size: 1.4em; line-height: 1.4em; color: #235f32; }
+
+em.rs { font-size: 0.8em !important }
+sup.cents { font-size: 0.6em !important }
+
 #content .prices #prices ul li span.desc { background: #f5f5f5; }
 #content .sign-up h4 { font-size: 26px; font-weight: normal; margin-bottom: 20px; }
 
@@ -182,4 +186,11 @@ a.prev span, a.next span {
 
 .sign-up{
 	/* background: #eee; */
+}
+
+
+.credits{
+	font-size: 0.7em;
+	line-height: 0.7em !important;
+	color: #666;
 }

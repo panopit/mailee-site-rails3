@@ -8,8 +8,7 @@ class SiteController < ApplicationController
 
   def agencies
     # title "Agências"
-    #render :layout => false
-    render :status => :not_found, :nothing => true
+    render :layout => false
   end
 
   def bad_browsers
