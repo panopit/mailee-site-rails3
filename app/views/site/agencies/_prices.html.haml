@@ -12,7 +12,9 @@
         100 mil
         .credits créditos
       / %span 100 mil créditos
-      %span.price R$ 192,00
+      %span.price 
+        %em.rs R$ 192
+        %sup.cents ,00
       %span IP dedicado: R$ 79,00/mês
       %span.desc R$ 175,00/mês<sup>*</sup>
       
@@ -22,7 +24,9 @@
         250 mil
         .credits créditos
       / %span 100 mil créditos
-      %span.price R$ 400,00
+      %span.price 
+        %em.rs R$ 400
+        %sup.cents ,00
       %span IP dedicado: R$ 79,00/mês
       %span.desc R$ 360,00/mês<sup>*</sup>
       
@@ -32,7 +36,9 @@
         1 milhão
         .credits de créditos
       / %span 100 mil créditos
-      %span.price R$ 960,00
+      %span.price 
+        %em.rs R$ 960
+        %sup.cents ,00
       %span IP dedicado: R$ 79,00/mês
       %span.desc R$ 865,00/mês<sup>*</sup> + IP dedicado 
       
@@ -43,16 +49,15 @@
         .credits créditos
       / %span 100 mil créditos
       %span.price
-        %em.rs R$
-        640
+        %em.rs R$ 640
         %sup.cents ,00
       %span IP dedicado: R$ 79,00/mês
       %span.desc R$ 575,00/mês<sup>*</sup> + IP dedicado
       
       / %span.desc IP dedicado gratuito no pacote de 6 meses
       %a.btn.btn-success{:href => "#"} cadastre-se
-%div.clear.center
-  %br
-  %br
-  %sup *
-  Compra recorrente de no mínimo 6 meses.
+.clear
+%div.center{:style => 'padding-top: 1.5em; margin-bottom: 1.5em;'}
+  %p
+    %sup *
+    Compra recorrente de no mínimo 6 meses.

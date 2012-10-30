@@ -118,7 +118,8 @@
         / .all
       / .resources
 
-      .prices.separa= render 'site/agencies/prices'
+      .prices.separa
+        = render 'site/agencies/prices'
       .sign-up.separa
         #sign-up.center
           %h2 CADASTRO
@@ -292,9 +293,7 @@
                   %p ~1 email por mês
                   %input.btn.btn-success{:type => "submit", :value => "Cadastrar"}
           .clear
-        .pull-right.clear
-          %br
-          %br
+          .pull-right.clear{:style => 'margin-bottom: 18em;'}
     :javascript
       function scroll(scrol, e){
         if(scrol.length > 0 && $("#"+scrol[scrol.length-1]).length > 0){
@@ -344,14 +343,17 @@
         //       },
         //       pagination  : "#img_carousel_pag",
         //     });
+        $('#header .menu .center ul').scrollspy();
+        $(".hide").hide();
+        $(".resources .content .wrap").html($("#resources-clientes").html());
+        //$(".resources .content .menu li").first().addClass("active");
+        $(".resources .content .menu li a").on('click', function(e){
+          console.log("oi");
+          e.preventDefault();
+          $(".resources .content .menu li").removeClass("active");
+          console.log($(this).parent());
+          $(this).parent().addClass("active");
+          $(".resources .content .wrap").html($($(this).attr('href')).html());
+        });
       });
-      $('#header .menu .center ul').scrollspy();
-      $(".hide").hide();
-      $(".resources .content .wrap").html($("#resources-clientes").html());
-      $(".resources .content .menu li").first().addClass("active");
-      $(".resources .content .menu li a").on('click', function(e){
-        e.preventDefault();
-        $(".resources .content .menu li").removeClass("active");
-        $(this).parent().addClass("active");
-        $(".resources .content .wrap").html($($(this).attr('href')).html());
-      });
+
