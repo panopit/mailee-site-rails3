@@ -118,7 +118,7 @@ body form.signup_mailee_form fieldset .text_field.success_field { background-pos
 
 body form.signup_mailee_form fieldset input[type="text"], body form.signup_mailee_form fieldset input[type="password"] { font-size: 18px; font-family: Helvetica, 'Humnst777 BT', Arial, sans-serif; margin: 0; border: 0 none; background: transparent none; padding: 5px 0; letter-spacing: 1px; color: #444; width: 290px; }
 
-body form.signup_mailee_form fieldset input[type="text"].subdomain, body form.signup_mailee_form fieldset input[type="password"].subdomain { text-align: right; width: 176px; }
+body form.signup_mailee_form fieldset input[type="text"].subdomain, body form.signup_mailee_form fieldset input[type="password"].subdomain { text-align: right; width: 106px; }
 
 body form.signup_mailee_form fieldset input[type="radio"], body form.signup_mailee_form fieldset input[type="checkbox"] { width: 16px; height: 16px; vertical-align: middle; padding: 0; margin: -4px 0 0.25em 0; }
 
