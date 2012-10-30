@@ -13,23 +13,23 @@
                 %h1 Email Marketing 2.0, pensado especialmente para agências.
                 %p Planejamento, envio e relatórios de email marketing no mesmo lugar, sem dificuldades. E ainda com preços especiais.
               .pull-right
-                %a.btn.btn-success.btn-large{:href => "#"} comece agora
+                %a.btn.btn-success.btn-large.scroll{:href => "#sign-up"} comece agora
               .clear
             .image_carousel{:style => "min-height:450px"}
               #img_carousel
                 %img{:alt => "basketball", :src => "/agencies/images/skin.png"}/
-                / Descomentar o carousel quando formos usar
-                / %img{:alt => "beachtree", :src => "/agencies/images/skin2.png"}/
-                / %img{:alt => "beachtree 2", :src => "/agencies/images/skin3.png"}/
-                / %img{:alt => "beachtree 2", :src => "/agencies/images/skin4.png"}/
-                / %img{:alt => "beachtree 3", :src => "/agencies/images/skin5.png"}/
-                / %img{:alt => "beachtree 4", :src => "/agencies/images/skin6.png"}/
+                -# Descomentar o carousel quando formos usar
+                  %img{:alt => "beachtree", :src => "/agencies/images/skin2.png"}/
+                  %img{:alt => "beachtree 2", :src => "/agencies/images/skin3.png"}/
+                  %img{:alt => "beachtree 2", :src => "/agencies/images/skin4.png"}/
+                  %img{:alt => "beachtree 3", :src => "/agencies/images/skin5.png"}/
+                  %img{:alt => "beachtree 4", :src => "/agencies/images/skin6.png"}/
               .clearfix
-              / Descomentar o carousel quando formos usar
-              / %a#img_carousel_prev.prev{:href => "#"}
-              /   %span Anterior
-              / %a#img_carousel_next.next{:href => "#"}
-              /   %span Próximo
+              -# Descomentar o carousel quando formos usar
+                %a#img_carousel_prev.prev{:href => "#"}
+                  %span Anterior
+                %a#img_carousel_next.next{:href => "#"}
+                  %span Próximo
               #img_carousel_pag.pagination
             #recursos.content
               %h2 Recursos
@@ -125,7 +125,8 @@
           %h2 CADASTRO
           %h4 Você terá 250 créditos para realizar testes.
           / copy
-          %form#signup-form.signup_mailee_form{:action => "/signup", :autocomplete => "off", :method => "post"}
+          %form#signup-form.signup_mailee_form{:action => "localhost:3000/signup", :autocomplete => "off", :method => "post"}
+            %input#client_is_agency{:type => "hidden", :name => "client[is_agency]"}
             %fieldset
               %table
                 %thead
