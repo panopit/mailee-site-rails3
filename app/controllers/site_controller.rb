@@ -8,6 +8,7 @@ class SiteController < ApplicationController
 
   def agencies
     # title "Agências"
+    #render :nothing => true, :status => :not_found if Rails.env.production?
     render :layout => false
   end
 

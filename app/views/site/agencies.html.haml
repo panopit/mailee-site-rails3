@@ -125,8 +125,9 @@
           %h2 CADASTRO
           %h4 Você terá 250 créditos para realizar testes.
           / copy
-          %form#signup-form.signup_mailee_form{:action => "localhost:3000/signup", :autocomplete => "off", :method => "post"}
-            %input#client_is_agency{:type => "hidden", :name => "client[is_agency]"}
+          - action_url = Rails.env.production? ? "/signup" : "localhost:3000/signup"
+          %form#signup-form.signup_mailee_form{:action => action_url, :autocomplete => "off", :method => "post"}
+            %input#client_is_agency{:type => "hidden", :name => "client[is_agency]", :value => "1"}
             %fieldset
               %table
                 %thead
