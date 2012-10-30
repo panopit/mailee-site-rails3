@@ -121,93 +121,101 @@
       .prices.separa
         = render 'site/agencies/prices'
       .sign-up.separa
-        #sign-up.center
+        #sign-up.center.signup_wrapper
           %h2 CADASTRO
           %h4 Você terá 250 créditos para realizar testes.
           / copy
-          - action_url = Rails.env.production? ? "/signup" : "localhost:3000/signup"
-          %form#signup-form.signup_mailee_form{:action => action_url, :autocomplete => "off", :method => "post"}
-            %input#client_is_agency{:type => "hidden", :name => "client[is_agency]", :value => "1"}
-            %fieldset
-              %table
-                %thead
-                  %tr
-                    %th
-                      %table{:style => "margin: 0;"}
-                        %thead
-                          %tr
-                            %td
-                              %label{:for => "user_email"} Email
-                            %td.right_aligned
-                              #email_messages
-                                %span.error_message.hide Preencha com um email válido
-                                %span.success_message.hide Email válido
-                              .clear
-                    %th
-                      %table{:style => "margin: 0;"}
-                        %thead
-                          %tr
-                            %td
-                              %label{:for => "client_subdomain"} Subdomínio
-                            %td.right_aligned
-                              #subdomain_messages
-                                %span.loading.hide
-                                  %img{:alt => "Loader", :src => "/agencies/images/loader.png"}/
-                                %span.error_message.hide Subdomínio inválido
-                                %span.success_message.hide Ótima escolha!
-                              .clear
-                    %th
-                      %table{:style => "margin: 0;"}
-                        %thead
-                          %tr
-                            %td
-                              %label{:for => "user_password"} Senha
-                            %td.right_aligned
-                              #password_messages
-                                %span.error_message.hide Senha inválida
-                                %span.success_message.hide Senha válida
-                              .hide
-                %tbody
-                  %tr
-                    %td
-                      #email_text_field.text_field
-                        %input#user_email{:maxlength => "250", :name => "user[email]", :size => "250", :tabindex => "1", :type => "text"}/
-                    %td
-                      #subdomain_text_field.text_field
-                        %input#client_subdomain.subdomain{:maxlength => "20", :name => "client[subdomain]", :size => "20", :tabindex => "2", :type => "text"}/
-                        %span.mailee_domain .agency.mailee.me
-                    %td
-                      #password_text_field.text_field
-                        %input#user_password{:maxlength => "32", :name => "user[password]", :size => "32", :tabindex => "3", :type => "password"}/
-                      #yo{:style => "width:300px; position:relative; line-height: 18px;"}
-                        #password_strenght{:style => "float:left; width:172px;"}
-                        %div{:style => "text-align:right; width:120px; float:right;"}
-                          #show_password
-                            .show_password_icon
-                            %label.show_password_label{:for => "show_password"} Exibir senha  
-                          #hide_password.hide
-                            .hide_password_icon
-                            %label.hide_password_label{:for => "hide_password"} Ocultar senha  
-                  %tr
-                    %td
-                    %td{:style => "padding: 10px 0;"}
-                      #accept_and_signup
-                        %input#accept.check{:name => "accept", :tabindex => "4", :type => "checkbox"}/
-                        %label{:for => "accept"}
-                          Li e aceito os
-                          = succeed "." do
-                            %a{:href => "http://www.mailee.me/termos_de_uso.html", :target => "_blank"} termos de uso
-                        %span.accept_terms_messages.hide
-                    %td{:style => "padding: 10px 0;"}
-                      %button#send{:disabled => "disabled", :tabindex => "5", :type => "submit"}
-            :javascript
-              //
-                error_messages = []
-              //
-          %script{:src => "/agencies/javascripts/typewatch.js", :type => "text/javascript"}
-          %script{:src => "/agencies/javascripts/jquery.pstrength.signup.js", :type => "text/javascript"}
-          %script{:src => "/agencies/javascripts/caps.jquery.js", :type => "text/javascript"}
-          %script{:src => "/agencies/javascripts/new.js", :type => "text/javascript"}
+          :javascript
+            //
+            //mailee_signup_path = 'http://signup.mailee.me/signup/new_agency'
+            mailee_signup_path = 'http://signup.lvh.me:3000/signup/new_agency'
+          = javascript_include_tag 'jquery.cookie'
+          = javascript_include_tag 'jquery.iframe'
+          = javascript_include_tag 'signup_agency'
+          -#
+            - action_url = Rails.env.production? ? "/signup" : "localhost:3000/signup"
+            %form#signup-form.signup_mailee_form{:action => action_url, :autocomplete => "off", :method => "post"}
+              %input#client_is_agency{:type => "hidden", :name => "client[is_agency]", :value => "1"}
+              %fieldset
+                %table
+                  %thead
+                    %tr
+                      %th
+                        %table{:style => "margin: 0;"}
+                          %thead
+                            %tr
+                              %td
+                                %label{:for => "user_email"} Email
+                              %td.right_aligned
+                                #email_messages
+                                  %span.error_message.hide Preencha com um email válido
+                                  %span.success_message.hide Email válido
+                                .clear
+                      %th
+                        %table{:style => "margin: 0;"}
+                          %thead
+                            %tr
+                              %td
+                                %label{:for => "client_subdomain"} Subdomínio
+                              %td.right_aligned
+                                #subdomain_messages
+                                  %span.loading.hide
+                                    %img{:alt => "Loader", :src => "/agencies/images/loader.png"}/
+                                  %span.error_message.hide Subdomínio inválido
+                                  %span.success_message.hide Ótima escolha!
+                                .clear
+                      %th
+                        %table{:style => "margin: 0;"}
+                          %thead
+                            %tr
+                              %td
+                                %label{:for => "user_password"} Senha
+                              %td.right_aligned
+                                #password_messages
+                                  %span.error_message.hide Senha inválida
+                                  %span.success_message.hide Senha válida
+                                .hide
+                  %tbody
+                    %tr
+                      %td
+                        #email_text_field.text_field
+                          %input#user_email{:maxlength => "250", :name => "user[email]", :size => "250", :tabindex => "1", :type => "text"}/
+                      %td
+                        #subdomain_text_field.text_field
+                          %input#client_subdomain.subdomain{:maxlength => "20", :name => "client[subdomain]", :size => "20", :tabindex => "2", :type => "text"}/
+                          %span.mailee_domain .agency.mailee.me
+                      %td
+                        #password_text_field.text_field
+                          %input#user_password{:maxlength => "32", :name => "user[password]", :size => "32", :tabindex => "3", :type => "password"}/
+                        #yo{:style => "width:300px; position:relative; line-height: 18px;"}
+                          #password_strenght{:style => "float:left; width:172px;"}
+                          %div{:style => "text-align:right; width:120px; float:right;"}
+                            #show_password
+                              .show_password_icon
+                              %label.show_password_label{:for => "show_password"} Exibir senha  
+                            #hide_password.hide
+                              .hide_password_icon
+                              %label.hide_password_label{:for => "hide_password"} Ocultar senha  
+                    %tr
+                      %td
+                      %td{:style => "padding: 10px 0;"}
+                        #accept_and_signup
+                          %input#accept.check{:name => "accept", :tabindex => "4", :type => "checkbox"}/
+                          %label{:for => "accept"}
+                            Li e aceito os
+                            = succeed "." do
+                              %a{:href => "http://www.mailee.me/termos_de_uso.html", :target => "_blank"} termos de uso
+                          %span.accept_terms_messages.hide
+                      %td{:style => "padding: 10px 0;"}
+                        %button#send{:disabled => "disabled", :tabindex => "5", :type => "submit"}
+              :javascript
+                //
+                  error_messages = []
+                //
+            %script{:src => "/agencies/javascripts/typewatch.js", :type => "text/javascript"}
+            %script{:src => "/agencies/javascripts/jquery.pstrength.signup.js", :type => "text/javascript"}
+            %script{:src => "/agencies/javascripts/caps.jquery.js", :type => "text/javascript"}
+            %script{:src => "/agencies/javascripts/new.js", :type => "text/javascript"}
           / end copy
         / #sign-up
       / .sign-up
