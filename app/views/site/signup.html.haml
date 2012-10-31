@@ -10,7 +10,11 @@
       %h2 Você terá 250 créditos para realizar testes.
     -# %iframe{ :src => signup_iframe_path, :width => "100%", :height => "180px", :scrolling => "no", :frameborder => 0, :style => 'background-color: transparent;', :allowtransparency => "true" }
 
-:javascript
-  mailee_signup_path = 'http://signup.mailee.me/signup/new'
+- if Rails.env.production?
+  :javascript
+    mailee_signup_path = 'http://signup.mailee.me/signup/new'
+- else
+  :javascript
+    mailee_signup_path = 'http://signup.lvh.me:3000/signup/new'
 = javascript_include_tag 'jquery.iframe'
 = javascript_include_tag 'signup'
