@@ -15,9 +15,9 @@ module SiteHelper
     end
   end
   def selected(current);    selected_menu.to_s == current.to_s ? 'current_view' : '';             end
-  def signup_iframe_path;   "http://signup.#{env_path}/signup/new?referrer=#{params[:referrer]}"; end
+  def signup_iframe_path;   "https://signups.#{env_path}/signup/new?referrer=#{params[:referrer]}"; end
 
-  def global_login;         'http://signup.mailee.me/site_sessions/new' end
+  def global_login;         'https://signups.mailee.me/site_sessions/new' end
   def blog_path;            'http://blog.mailee.me' end
   def twitter_path;         'http://twitter.com/maileeme' end
   def support_mail;         'mailto:suporte@mailee.me' end

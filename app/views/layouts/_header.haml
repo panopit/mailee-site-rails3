@@ -1,7 +1,7 @@
 .header_wrapper
   #login_signup_box
     #{link_to 'Login', '#', :id => :login_button, :title => 'Login'}
-    #{link_to t('header.try_for_free'), 'https://signups.mailee.me/site_sessions/new', :id => :signup_button, :title => t('header.try_for_free')}
+    #{link_to t('header.try_for_free'), signup_path, :id => :signup_button, :title => t('header.try_for_free')}
     .clear
   #logo= link_to image_tag('mailee_logo.png', :alt => 'Mailee.me', :title => 'Mailee.me · Email Marketing 2.0'), root_path
   %ul#navigation
