@@ -194,3 +194,39 @@ a.prev span, a.next span {
 	line-height: 0.7em !important;
 	color: #666;
 }
+
+#login_form_box {
+  box-shadow: 0 0 50px #fff;
+  -moz-box-shadow: 0 0 50px #fff;
+  -webkit-box-shadow: 0 0 50px #fff;
+  -khtml-box-shadow: 0 0 50px #fff;
+  border-radius: 15px;
+  padding: 15px;
+  position: fixed;
+  width: 500px;
+  height: 350px;
+  background: #000;
+  margin: -190px 0 0 -265px;
+  top: 50%;
+  left: 50%;
+  z-index: 800;
+}
+
+.close_login_panel {
+  z-index: 900;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  width: 24px;
+  height: 24px;
+}
+
+.page_overlay {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpiYGBgeAAQYAAA5QDhGs9+zgAAAABJRU5ErkJggg==");
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 700;
+}
