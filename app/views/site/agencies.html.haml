@@ -231,6 +231,13 @@
           .clear
           .pull-right.clear{:style => 'margin-bottom: 18em;'}
     :javascript
+      var uvOptions = {};
+      (function() {
+        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/OkzuTXjb64YrHipR2RTTw.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+      })();
+    :javascript
       function scroll(scrol, e){
         if(scrol.length > 0 && $("#"+scrol[scrol.length-1]).length > 0){
           if(e){
