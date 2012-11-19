@@ -9,6 +9,7 @@ class SiteController < ApplicationController
   def agencies
     # title "Agências"
     #render :nothing => true, :status => :not_found if Rails.env.production?
+    @referrer = params["referrer"]
     render :layout => false
   end
 
