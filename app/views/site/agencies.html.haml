@@ -222,11 +222,43 @@
                 %a{:href => commercial_mail} Comercial
           .span4.last
             %h4 Receba nossa newsletter
-            %form{:action => "#", :method => "POST"}
-              %input.input-text{:name => "news[name]", :placeholder => "Nome", :type => "text"}
-                %input.input-text{:name => "news[email]", :placeholder => "Email", :type => "text"}
+            #mailee_ok.hide
+              %h5 Email cadastrado com sucesso.
+              %p Você receberá uma confirmação por email.
+            #mailee_error.hide
+              %h5 Ocorreu um erro ao cadastrar o email
+              = link_to 'Tentar novamente', '#', :class => 'subscribe_another_email'
+            %form{:action => "/mailee", :method => "POST", :id => "mailee_form"}
+              = token_tag
+              %input.input-text{:name => "name", :placeholder => "Nome", :type => "text"}
+                %input.input-text{:name => "email", :placeholder => "Email", :type => "text"}
                   %p ~1 email por mês
                   %input.btn.btn-success{:type => "submit", :value => "Cadastrar"}
+            :javascript
+              $('#mailee_form').submit(function(){
+                re = /^[a-z0-9\._-]+@([a-z0-9][a-z0-9-_]*[a-z0-9-_]\.)+([a-z-_]+\.)?([a-z-_]+)$/
+                if(!this.email.value.match(re)) {
+                  alert("Confira o preenchimento do seu email.")
+                  this.email.focus()
+                  return false
+                }
+                var data = $(this).serialize()
+                var url = $(this).attr('action')
+                $.post(url, data, function(result){
+                  $('#mailee_form').fadeOut()
+                  if(result.ok){
+                    $('#mailee_ok').fadeIn()
+                  }else{
+                    $('#mailee_error').fadeIn()
+                  }
+                }, 'json')
+                return false
+              })
+              $('.subscribe_another_email').click(function(){
+                $('#mailee_ok').hide()
+                $('#mailee_form').fadeIn()
+                return false
+              })
           .clear
           .pull-right.clear{:style => 'margin-bottom: 18em;'}
     :javascript
