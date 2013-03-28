@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 #header > .social ul.socials li a:hover, #header > .social ul.socials li a:focus { color: #ddd; background-color: #193f76; }
 #header > .social ul.actions a { padding-left: 20px; padding-right: 20px; margin-left: 10px; -webkit-border-radius: 18px; border-radius: 18px; }
 #header > .menu { background: url(../images/bg-header.png) repeat-x center top; }
-#header > .menu ul { margin-left: 6px; text-align: right; }
+#header > .menu ul { margin-left: 5px; text-align: right; }
 #header > .menu li a { height: 105px; display: inline-block; min-width: 173px; text-align: center; background-image: url("../images/bg-nav.png"); background-repeat: no-repeat; background-position: center 145px; padding-top: 40px; /* -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; */ }
 #header > .menu li a span { font-size: 11px; display: block; margin-top: 10px; color: #3978d5; }
 #header > .menu li.active a, #header > .menu li a:hover, #header > .menu li a:focus { background-position: center 134px; }
